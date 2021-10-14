@@ -1,34 +1,59 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ABB task
 
-## Getting Started
+![logo](./public/abb-logo.png)
 
-First, run the development server:
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/git?s=https://github.com/sozonome/nextarter-chakra) 
+
+This is a `Next.js` project bootstrapped with `create-next-app`, added with `Primereact UI` and `TypeScript` setup. 
+
+To start, run the development server: Open [http://localhost:3000](http://localhost:3000)
 
 ```bash
-npm run dev
-# or
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# The challenge:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Create editable table component (Datasheet) using React from scratch (not using any external module such as react-data-grid, react-datasheet and etc.)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Requirements:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Assume that we have a list of employees with the following attributes:
 
-## Learn More
+- ID
+- Name
+- Surname
+- Date of birth
+- Position
+- Phone number
 
-To learn more about Next.js, take a look at the following resources:
+As a user I want:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- to view all employees in one table
+- to edit desired cells (inline editing)
+- to mark any row as deleted
+- to undo delete operation
+- to get the list of updated employees
+  We should assume the employee updated, if any attribute is different from the initial value.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+  If the value of any cell has been changed, but then returned to the previous value, we shouldn’t assume this employee as updated.
 
-## Deploy on Vercel
+- to get the list of employees marked as deleted
+  If the employee has been updated and then marked as deleted, we should remain this employee only in the deleted list.
+- to reset data (return all changes to the initial state)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+We can have a “Submit button” and view the JSON data as below on button click:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```json
+{
+	updated: […],
+	deleted: […]
+}
+```
+
+### It is nice to have:
+
+- Search functionality
+- Some basic validations (date, phone number validation etc.)
+- SSR support
+- Pagination
