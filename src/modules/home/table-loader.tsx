@@ -19,6 +19,7 @@ const tabelLoader = [...Array(rowCount)].map(() => {
       {td}
       {td}
       {td}
+      {td}
     </tr>
   )
 })

@@ -34,12 +34,15 @@ As a user I want:
 - to mark any row as deleted
 - to undo delete operation
 - to get the list of updated employees
+
   We should assume the employee updated, if any attribute is different from the initial value.
 
   If the value of any cell has been changed, but then returned to the previous value, we shouldn’t assume this employee as updated.
 
 - to get the list of employees marked as deleted
+
   If the employee has been updated and then marked as deleted, we should remain this employee only in the deleted list.
+  
 - to reset data (return all changes to the initial state)
 
 We can have a “Submit button” and view the JSON data as below on button click:

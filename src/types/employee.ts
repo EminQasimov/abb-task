@@ -10,9 +10,10 @@
 
 export interface Employee {
   id: string
+  deleted: boolean
   name: string
   surname: string
-  birthDate: string | Date
+  birthDate: string
   position: string
   phone: string
 }

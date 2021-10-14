@@ -2,7 +2,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family:  Lexend, sans-serif;
+  font-family: Lexend, sans-serif;
 }
 
 a {
@@ -12,4 +12,62 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.employees-table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.employees-table td,
+.employees-table th {
+  border: 1px solid #aaa;
+  padding: 8px;
+  height: 56px;
+}
+.employees-table td {
+  overflow: hidden;
+}
+
+.employees-table .last-column {
+  width: 95px;
+}
+
+.employees-table tr:hover {
+  background-color: #ddd;
+}
+
+.employees-table tr.deleted {
+  background-color: rgb(224, 189, 189);
+}
+
+.employees-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #2196f3;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.layout-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.layout-content {
+  min-height: 100vh;
+}
+
+.search-container {
+  margin: 20px auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.employees-table .p-inputtext,
+.employees-table .p-calendar {
+  width: 100px;
 }
