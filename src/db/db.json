@@ -3,7 +3,7 @@
     {
       "id": "S_i7oRWSCs",
       "name": "Ofelya",
-      "surname": "Seyidova",
+      "surname": "Seyidov",
       "birthDate": "2020-11-18T21:24:42.931Z",
       "position": "Officer",
       "phone": "(937)485-92-46"
@@ -391,10 +391,8 @@
       "birthDate": "2021-04-12T20:21:47.577Z",
       "position": "Executive",
       "phone": "(973)018-37-57"
-    }
-  ],
-  "initialEmployees": {
-    "bpvf6cbnAJ": {
+    },
+    {
       "id": "bpvf6cbnAJ",
       "name": "Elnarə",
       "surname": "Qasımova",
@@ -402,15 +400,7 @@
       "position": "Agent",
       "phone": "(929)552-01-68"
     }
-  },
-  "deletedEmployees": [
-    {
-      "id": "bpvf6cbnAJ",
-      "name": "Elna",
-      "surname": "Qasımova",
-      "birthDate": "2021-01-10T18:26:35.111Z",
-      "position": "Agent",
-      "phone": "(929)552-01-68"
-    }
-  ]
+  ],
+  "initialEmployees": {},
+  "deletedEmployees": []
 }

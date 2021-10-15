@@ -9,7 +9,7 @@ import "@fontsource/lexend/latin.css"
 import "styles/globals.css"
 
 const CustomApp = ({ Component, pageProps }: AppProps) => {
-  console.log({ Component, pageProps })
+  // console.log({ Component, pageProps })
 
   return (
     <>
