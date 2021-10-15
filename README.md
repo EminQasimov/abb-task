@@ -27,23 +27,23 @@ Assume that we have a list of employees with the following attributes:
 
 As a user I want:
 
-- to view all employees in one table
+- ✅ to view all employees in one table
 - to edit desired cells (inline editing)
-- to mark any row as deleted
-- to undo delete operation
-- to get the list of updated employees
+- ✅ to mark any row as deleted
+- ✅ to undo delete operation
+- ✅ to get the list of updated employees
 
-  We should assume the employee updated, if any attribute is different from the initial value.
+  ✅ We should assume the employee updated, if any attribute is different from the initial value.
 
-  If the value of any cell has been changed, but then returned to the previous value, we shouldn’t assume this employee as updated.
+  ✅ If the value of any cell has been changed, but then returned to the previous value, we shouldn’t assume this employee as updated.
 
-- to get the list of employees marked as deleted
+- ✅ to get the list of employees marked as deleted
 
-  If the employee has been updated and then marked as deleted, we should remain this employee only in the deleted list.
+  ✅ If the employee has been updated and then marked as deleted, we should remain this employee only in the deleted list.
 
-- to reset data (return all changes to the initial state)
+- ✅ to reset data (return all changes to the initial state)
 
-We can have a “Submit button” and view the JSON data as below on button click:
+✅ We can have a “Submit button” and view the JSON data as below on button click:
 
 ```json
 {
@@ -54,7 +54,8 @@ We can have a “Submit button” and view the JSON data as below on button clic
 
 ### It is nice to have:
 
-- Search functionality
+- ✅ Search functionality
+
 - Some basic validations (date, phone number validation etc.)
-- SSR support
-- Pagination
+- ✅ SSR support
+- ✅ Pagination

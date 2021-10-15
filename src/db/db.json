@@ -1,132 +1,12 @@
 {
   "employees": [
     {
-      "id": "bg_QPQvnV5",
-      "name": "Fərqanəsdf ",
-      "surname": "Agayesd  f",
-      "birthDate": "2021-05-24T12:13:06.220Z",
-      "position": "Architect",
-      "phone": "(981)399-07-96"
-    },
-    {
-      "id": "HwFVZsGPfc",
-      "name": "Amidsdfsdf",
-      "surname": "Ələkbərovdf",
-      "birthDate": "2021-09-02T05:09:13.164Z",
-      "position": "Frontend",
-      "phone": "(977)014-26-55"
-    },
-    {
-      "id": "A5zvQ4YSg0",
-      "name": "Laura",
-      "surname": "Vəsiyeva",
-      "birthDate": "2021-08-12T10:29:12.370Z",
-      "position": "Manager",
-      "phone": "(910)083-05-92"
-    },
-    {
-      "id": "OlfF04lVFi",
-      "name": "Fidan",
-      "surname": "Vəsiyeva",
-      "birthDate": "2021-01-28T10:13:15.055Z",
-      "position": "Producer",
-      "phone": "(933)074-24-82"
-    },
-    {
-      "id": "zGTeeYishQ",
-      "name": "Tunar",
-      "surname": "Əliyev",
-      "birthDate": "2021-01-23T23:12:48.865Z",
-      "position": "Administrator",
-      "phone": "(964)763-39-82"
-    },
-    {
-      "id": "MdJUIdoaWN",
-      "name": "Zahir",
-      "surname": "Xəlilov",
-      "birthDate": "2021-05-09T19:49:56.147Z",
-      "position": "Manager",
-      "phone": "(957)309-33-42"
-    },
-    {
-      "id": "bpvf6cbnAJ",
-      "name": "Elnarə",
-      "surname": "Qasımova",
-      "birthDate": "2021-01-10T18:26:35.111Z",
-      "position": "Agent",
-      "phone": "(929)552-01-68"
-    },
-    {
       "id": "S_i7oRWSCs",
       "name": "Ofelya",
       "surname": "Seyidova",
       "birthDate": "2020-11-18T21:24:42.931Z",
       "position": "Officer",
       "phone": "(937)485-92-46"
-    },
-    {
-      "id": "d4I3DmPnoP",
-      "name": "Tərlan",
-      "surname": "Rəhimov",
-      "birthDate": "2021-03-31T01:11:04.881Z",
-      "position": "Supervisor",
-      "phone": "(974)757-68-64"
-    },
-    {
-      "id": "Cl_1fEU1ri",
-      "name": "Akif",
-      "surname": "Quliyev",
-      "birthDate": "2021-03-03T23:58:47.203Z",
-      "position": "Director",
-      "phone": "(938)315-31-77"
-    },
-    {
-      "id": "Aw5WxYOEAL",
-      "name": "Elnur",
-      "surname": "Nəzərov",
-      "birthDate": "2021-05-29T00:26:21.477Z",
-      "position": "Coordinator",
-      "phone": "(905)956-35-65"
-    },
-    {
-      "id": "xDyhQx4lcG",
-      "name": "Emin",
-      "surname": "Quliyev",
-      "birthDate": "2020-11-23T11:42:44.911Z",
-      "position": "Architect",
-      "phone": "(995)994-40-03"
-    },
-    {
-      "id": "lvvxDOFCpY",
-      "name": "Gülər",
-      "surname": "Əfəndiyeva",
-      "birthDate": "2021-08-01T07:37:56.057Z",
-      "position": "Strategist",
-      "phone": "(958)037-39-24"
-    },
-    {
-      "id": "hwy1gU8VWK",
-      "name": "Akif",
-      "surname": "Quliyev",
-      "birthDate": "2021-07-21T07:47:13.104Z",
-      "position": "Director",
-      "phone": "(958)578-82-42"
-    },
-    {
-      "id": "8rn2f8FID6",
-      "name": "Cansu",
-      "surname": "Abdullayeva",
-      "birthDate": "2021-04-03T02:16:03.714Z",
-      "position": "Analyst",
-      "phone": "(933)384-33-39"
-    },
-    {
-      "id": "g8MJ-ks3LB",
-      "name": "Aqil",
-      "surname": "Əhmədov",
-      "birthDate": "2021-02-24T01:26:08.325Z",
-      "position": "Executive",
-      "phone": "(982)485-70-87"
     },
     {
       "id": "ro21UThJnL",
@@ -391,18 +271,112 @@
       "birthDate": "2021-08-14T07:45:25.875Z",
       "position": "Director",
       "phone": "(994)285-59-35"
-    }
-  ],
-  "initialEmployees": {
-    "2_3YJWzVV6": {
-      "id": "2_3YJWzVV6",
-      "name": "Natiq",
-      "surname": "Məmmədov",
-      "birthDate": "2021-04-12T20:21:47.577Z",
-      "position": "Executive",
-      "phone": "(973)018-37-57"
     },
-    "bg_QPQvnV5": {
+    {
+      "id": "zGTeeYishQ",
+      "name": "Tunar",
+      "surname": "Əliyev",
+      "birthDate": "2021-01-23T23:12:48.865Z",
+      "position": "Administrator",
+      "phone": "(964)763-39-82"
+    },
+    {
+      "id": "Aw5WxYOEAL",
+      "name": "Elnur",
+      "surname": "Nəzərov",
+      "birthDate": "2021-05-29T00:26:21.477Z",
+      "position": "Coordinator",
+      "phone": "(905)956-35-65"
+    },
+    {
+      "id": "g8MJ-ks3LB",
+      "name": "Aqil",
+      "surname": "Əhmədov",
+      "birthDate": "2021-02-24T01:26:08.325Z",
+      "position": "Executive",
+      "phone": "(982)485-70-87"
+    },
+    {
+      "id": "8rn2f8FID6",
+      "name": "Cansu",
+      "surname": "Abdullayeva",
+      "birthDate": "2021-04-03T02:16:03.714Z",
+      "position": "Analyst",
+      "phone": "(933)384-33-39"
+    },
+    {
+      "id": "lvvxDOFCpY",
+      "name": "Gülər",
+      "surname": "Əfəndiyeva",
+      "birthDate": "2021-08-01T07:37:56.057Z",
+      "position": "Strategist",
+      "phone": "(958)037-39-24"
+    },
+    {
+      "id": "hwy1gU8VWK",
+      "name": "Akif",
+      "surname": "Quliyev",
+      "birthDate": "2021-07-21T07:47:13.104Z",
+      "position": "Director",
+      "phone": "(958)578-82-42"
+    },
+    {
+      "id": "xDyhQx4lcG",
+      "name": "Emin",
+      "surname": "Quliyev",
+      "birthDate": "2020-11-23T11:42:44.911Z",
+      "position": "Architect",
+      "phone": "(995)994-40-03"
+    },
+    {
+      "id": "Cl_1fEU1ri",
+      "name": "Akif",
+      "surname": "Quliyev",
+      "birthDate": "2021-03-03T23:58:47.203Z",
+      "position": "Director",
+      "phone": "(938)315-31-77"
+    },
+    {
+      "id": "d4I3DmPnoP",
+      "name": "Tərlan",
+      "surname": "Rəhimov",
+      "birthDate": "2021-03-31T01:11:04.881Z",
+      "position": "Supervisor",
+      "phone": "(974)757-68-64"
+    },
+    {
+      "id": "MdJUIdoaWN",
+      "name": "Zahir",
+      "surname": "Xəlilov",
+      "birthDate": "2021-05-09T19:49:56.147Z",
+      "position": "Manager",
+      "phone": "(957)309-33-42"
+    },
+    {
+      "id": "HwFVZsGPfc",
+      "name": "Amidsdfsdf",
+      "surname": "Ələkbərov",
+      "birthDate": "2021-09-02T05:09:13.164Z",
+      "position": "Frontend",
+      "phone": "(977)014-26-55"
+    },
+    {
+      "id": "OlfF04lVFi",
+      "name": "Fidan",
+      "surname": "Vəsiyeva",
+      "birthDate": "2021-01-28T10:13:15.055Z",
+      "position": "Producer",
+      "phone": "(933)074-24-82"
+    },
+    {
+      "id": "A5zvQ4YSg0",
+      "name": "Laura",
+      "surname": "Vəsiyeva",
+      "birthDate": "2021-08-12T10:29:12.370Z",
+      "position": "Manager",
+      "phone": "(910)083-05-92"
+    },
+    {
       "id": "bg_QPQvnV5",
       "name": "Fərqanəsdf ",
       "surname": "Agayesd",
@@ -410,23 +384,33 @@
       "position": "Architect",
       "phone": "(981)399-07-96"
     },
-    "HwFVZsGPfc": {
-      "id": "HwFVZsGPfc",
-      "name": "Amidsdfsdf",
-      "surname": "Ələkbərov",
-      "birthDate": "2021-09-02T05:09:13.164Z",
-      "position": "Frontend",
-      "phone": "(977)014-26-55"
-    }
-  },
-  "deletedEmployees": [
     {
       "id": "2_3YJWzVV6",
-      "name": "Natiqasdasd",
+      "name": "Natiq",
       "surname": "Məmmədov",
       "birthDate": "2021-04-12T20:21:47.577Z",
       "position": "Executive",
       "phone": "(973)018-37-57"
+    }
+  ],
+  "initialEmployees": {
+    "bpvf6cbnAJ": {
+      "id": "bpvf6cbnAJ",
+      "name": "Elnarə",
+      "surname": "Qasımova",
+      "birthDate": "2021-01-10T18:26:35.111Z",
+      "position": "Agent",
+      "phone": "(929)552-01-68"
+    }
+  },
+  "deletedEmployees": [
+    {
+      "id": "bpvf6cbnAJ",
+      "name": "Elna",
+      "surname": "Qasımova",
+      "birthDate": "2021-01-10T18:26:35.111Z",
+      "position": "Agent",
+      "phone": "(929)552-01-68"
     }
   ]
 }

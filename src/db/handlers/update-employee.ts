@@ -1,5 +1,6 @@
 import { employees, initialEmployees, saveDb } from "db"
 import { Employee } from "types/employee"
+import { shallowEqual } from "utils"
 
 export function updateEmployee(employeeId: string, body: Partial<Employee>) {
   const foundIndex = employees.findIndex((item) => item.id === employeeId)
@@ -8,17 +9,20 @@ export function updateEmployee(employeeId: string, body: Partial<Employee>) {
   const foundEmployee = employees[foundIndex]
   const updatedEmployee = { ...foundEmployee, ...body }
 
-  employees.splice(foundIndex, 1, updatedEmployee)
-  initialEmployees[employeeId] = foundEmployee
+  const oldEmployee = initialEmployees[employeeId] ?? foundEmployee
+  const isEqual = shallowEqual(updatedEmployee, oldEmployee)
 
-  // console.log({
-  //   employeeId,
-  //   body,
-  //   foundEmployee,
-  //   updatedEmployee,
-  //   initialEmployees,
-  //   bubu: employees.slice(0.5),
-  // })
+  // update values in employees
+  employees.splice(foundIndex, 1, updatedEmployee)
+
+  if (isEqual) {
+    // if it is same value not add it to changedEmpoyees list
+    delete initialEmployees[employeeId]
+  } else {
+    // save old values for then can be reset to inital values
+    initialEmployees[employeeId] = foundEmployee
+  }
+
   console.log(
     `/api/employee/:id  - PATCH - ${foundEmployee.name}(${employeeId}) - updated \n`
   )

@@ -4,7 +4,7 @@ import { CancelIcon, CheckIcon } from "assets/icons"
 
 import styles from "./inline-form.module.scss"
 
-type InlineFormType = {
+type InlineFormProps = {
   viewMode: ReactChild
   editMode: ReactChild
   onSubmit: (close: () => void) => void
@@ -12,7 +12,7 @@ type InlineFormType = {
   disabled?: boolean
 }
 
-export const InlineForm = (props: InlineFormType) => {
+export const InlineForm = (props: InlineFormProps) => {
   const { editMode, viewMode, onSubmit, onCancel, disabled = false } = props
   const [isEdit, setEdit] = useState(false)
   const ref = useRef<HTMLFormElement>(null)

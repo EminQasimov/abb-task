@@ -1,9 +1,4 @@
-import {
-  deletedEmployees,
-  employees,
-  getUpdatedEmployees,
-  initialEmployees,
-} from "db"
+import { deletedEmployees, employees, getUpdatedEmployees } from "db"
 import { matchSorter } from "match-sorter"
 import { Employee } from "types/employee"
 
