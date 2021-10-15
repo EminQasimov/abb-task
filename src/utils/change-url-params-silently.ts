@@ -1,4 +1,4 @@
-export const changeUrlParamsSilently = (key: string, value: string) => {
+export function changeUrlParamsSilently(key: string, value: string) {
   if (!window) return
 
   const url = new URL(window.location.href)

@@ -1,12 +1,14 @@
-import Link from 'next/link'
-
 const Footer = () => {
   return (
-    <div>
-      <div>
-        &copy; {new Date().getFullYear()} -{' '}
-        <Link href="https://emin-qasimov.web.app">Emin Qasimov</Link>
-      </div>
+    <div style={{ margin: "60px auto", maxWidth: 200 }}>
+      &copy; {new Date().getFullYear()} -{" "}
+      <a
+        href="https://emin-qasimov.web.app"
+        target="_blank"
+        style={{ textDecoration: "underline" }}
+      >
+        Emin Qasimov
+      </a>
     </div>
   )
 }

@@ -8,6 +8,13 @@ type HookProps = {
   onSuccess?: () => void
 }
 
+type HookState = {
+  isLoading: boolean
+  data: any
+  isError: boolean
+  error: any
+}
+
 export default function useFetch(props: HookProps) {
   const {
     url,
@@ -17,7 +24,7 @@ export default function useFetch(props: HookProps) {
     onSuccess = () => {},
   } = props
 
-  const [state, setState] = useState(() => {
+  const [state, setState] = useState<HookState>(() => {
     return {
       isLoading: false,
       data: initialData ?? {},
@@ -28,15 +35,16 @@ export default function useFetch(props: HookProps) {
 
   const { isLoading, isError, error, data } = state
 
-  const refetch = useCallback(() => {
-    setState((prev) => ({
-      ...prev,
-      isLoading: true,
-    }))
+  const refetch = useCallback(
+    async (onDone?: () => void) => {
+      setState((prev) => ({
+        ...prev,
+        isLoading: true,
+      }))
 
-    fetch(url, fetchOptions)
-      .then((res) => res.json())
-      .then((data) => {
+      try {
+        const data = await fetch(url, fetchOptions).then((res) => res.json())
+
         setState(() => ({
           isError: false,
           isLoading: false,
@@ -44,19 +52,23 @@ export default function useFetch(props: HookProps) {
           data,
         }))
         onSuccess()
-      })
-      .catch((e) => {
+      } catch (error) {
         setState((prev) => ({
           ...prev,
           isLoading: false,
           isError: true,
-          error: e,
+          error,
         }))
-      })
-  }, [url, queryEnabled])
+      } finally {
+        onDone?.()
+      }
+    },
+    [url, queryEnabled, fetchOptions]
+  )
 
   useEffect(() => {
     if (!queryEnabled) return
+
     refetch()
   }, [url, queryEnabled])
 

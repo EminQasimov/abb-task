@@ -1,0 +1,5 @@
+export { default as CheckIcon } from "./check"
+export { default as CancelIcon } from "./cancel"
+export { default as DateIcon } from "./date"
+export { default as PhoneIcon } from "./phone"
+export { default as TrashIcon } from "./trash"

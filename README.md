@@ -2,9 +2,7 @@
 
 ![logo](./public/abb-logo.png)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/git?s=https://github.com/sozonome/nextarter-chakra) 
-
-This is a `Next.js` project bootstrapped with `create-next-app`, added with `Primereact UI` and `TypeScript` setup. 
+This is a `Next.js` project bootstrapped with `create-next-app`, added with `Primereact UI` and `TypeScript` setup.
 
 To start, run the development server: Open [http://localhost:3000](http://localhost:3000)
 
@@ -42,7 +40,7 @@ As a user I want:
 - to get the list of employees marked as deleted
 
   If the employee has been updated and then marked as deleted, we should remain this employee only in the deleted list.
-  
+
 - to reset data (return all changes to the initial state)
 
 We can have a “Submit button” and view the JSON data as below on button click:

@@ -5,7 +5,7 @@ import { Employee } from "types/employee"
 
 faker.locale = "az"
 
-export default function generateFakeData(count = 50) {
+export function generateFakeData(count = 50) {
   const employees: { [k: string]: Employee } = {}
 
   ;[...Array(count)].forEach(() => {

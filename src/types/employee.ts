@@ -10,7 +10,6 @@
 
 export interface Employee {
   id: string
-  deleted: boolean
   name: string
   surname: string
   birthDate: string

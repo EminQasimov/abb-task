@@ -1,6 +1,8 @@
 import { InputText } from "primereact/inputtext"
 import { useState } from "react"
 
+import styles from "./header.module.scss"
+
 interface SearchProps {
   onSearch: (search: string) => void
   initialValue: string
@@ -22,6 +24,7 @@ export default function Search({ onSearch, initialValue }: SearchProps) {
           value={value}
           onChange={(e) => setValue(e.target.value)}
           placeholder="Search"
+          className={styles.searchInput}
         />
         {value ? (
           <i

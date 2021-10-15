@@ -1,0 +1,92 @@
+.table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  border-top: none;
+
+  & td,
+  & th {
+    border-top: 1px solid #e5e7eb;
+    padding: 8px 12px;
+    height: 58px;
+    color: #4b5563;
+  }
+
+  tr:hover {
+    background-color: #f9fafb;
+  }
+
+  tr.deleted {
+    background-color: #fee2e2;
+  }
+
+  th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #e5e7eb;
+    color: #1f2937;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+
+  & .p-inputtext,
+  & .p-calendar {
+    max-width: 100%;
+  }
+}
+
+.idColCell {
+  background: #fef3c7;
+  color: #78350f;
+  font-size: 14px;
+  padding: 4px 8px;
+}
+
+.lastColumnTh {
+  width: 105px;
+}
+
+.idColumnTh {
+  width: 130px;
+}
+
+.lastCell {
+  text-align: right;
+}
+
+.button {
+  font-size: 14px;
+  padding: 6px 10px;
+  appearance: none;
+  border: none;
+  border-radius: 2px;
+}
+
+.deleteButton {
+  background: #ef4444;
+  color: #fff;
+  box-shadow: 0 1px 1px #b91c1c;
+
+  span {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.undoButton {
+  background: #d1d5db;
+  color: #1f2937;
+  box-shadow: 0 1px 1px #374151;
+}
+
+.cellViewMode {
+  display: flex;
+  align-items: center;
+
+  svg {
+    margin-right: 4px;
+  }
+}

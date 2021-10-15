@@ -1,26 +1,13 @@
-import { ReactNode, useEffect } from 'react'
-import NProgress from 'nprogress'
+import { ReactNode } from "react"
 
-import Footer from './footer'
-import Header from './header'
+import Footer from "./footer"
+import Header from "./header"
 
 type LayoutProps = {
   children: ReactNode
 }
 
 const Layout = ({ children }: LayoutProps) => {
-  // const isFetching = useIsFetching()
-
-  // useEffect(() => {
-  //   console.log(isFetching)
-
-  //   if (isFetching) {
-  //     NProgress.start()
-  //   } else {
-  //     NProgress.done()
-  //   }
-  // }, [isFetching])
-
   return (
     <div className="layout-container">
       <div>
