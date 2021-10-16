@@ -28,7 +28,7 @@ Assume that we have a list of employees with the following attributes:
 As a user I want:
 
 - ✅ to view all employees in one table
-- to edit desired cells (inline editing)
+- ✅ to edit desired cells (inline editing)
 - ✅ to mark any row as deleted
 - ✅ to undo delete operation
 - ✅ to get the list of updated employees
@@ -56,7 +56,7 @@ As a user I want:
 
 - ✅ Search functionality
 
-- Some basic validations (date, phone number validation etc.)
+- ✅ Some basic validations (date, phone number validation etc.)
 - ✅ SSR support
 - ✅ Pagination
 
