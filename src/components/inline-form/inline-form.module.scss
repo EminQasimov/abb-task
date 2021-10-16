@@ -10,14 +10,6 @@
   width: 100%;
   background: transparent;
   transition: 0.2s;
-
-  &:hover {
-    cursor: pointer;
-  }
-
-  &:active {
-    background: #fff;
-  }
 }
 
 .editWrap {
@@ -37,6 +29,7 @@
   background: transparent;
   font: inherit;
   color: inherit;
+  cursor: pointer;
 
   .editIcon {
     margin-left: 8px;

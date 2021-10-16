@@ -1,44 +1,23 @@
 import React from "react"
 import { Employee } from "types/employee"
-import useFetch from "hooks/use-fetch"
-import { BirthDateTd, PhoneTd, SharedTd } from "./cells"
+import { BirthDateTd, PhoneTd, SharedTd, DeleteTd } from "./cells"
 
 import styles from "../table.module.scss"
 
 type RowProps = {
   employee: Employee
-  search?: string
+  search?: string | undefined
   loadTable: () => void
   deleted: boolean
 }
 
 export const Row = (props: RowProps) => {
-  const { employee, deleted, loadTable } = props
+  const { employee, search, deleted, loadTable } = props
   const { id, name, surname, birthDate, position, phone } = employee
 
-  const { refetch: removeEmployee } = useFetch({
-    url: `/api/employees/${id}`,
-    fetchOptions: {
-      method: "DELETE",
-    },
-    onSuccess: () => {
-      loadTable()
-    },
-  })
-
-  const { refetch: undoEmployee } = useFetch({
-    url: `/api/employees/undo/${id}`,
-    fetchOptions: {
-      method: "POST",
-    },
-    onSuccess: () => {
-      loadTable()
-    },
-  })
-
   const sharedProps = {
-    search: props.search as string,
-    reload: loadTable,
+    search,
+    loadTable,
     deleted,
     id,
   }
@@ -53,24 +32,8 @@ export const Row = (props: RowProps) => {
       <SharedTd field="surname" initialValue={surname} {...sharedProps} />
       <BirthDateTd birthDate={birthDate} />
       <SharedTd field="position" initialValue={position} {...sharedProps} />
-      <PhoneTd phone={phone} />
-
-      <td className={styles.lastCell}>
-        <button
-          className={`${styles.button} ${
-            deleted ? styles.undoButton : styles.deleteButton
-          }`}
-          onClick={() => {
-            if (deleted) {
-              undoEmployee()
-            } else {
-              removeEmployee()
-            }
-          }}
-        >
-          {deleted ? "Undo" : <span>Delete</span>}
-        </button>
-      </td>
+      <SharedTd field="phone" initialValue={phone} {...sharedProps} />
+      <DeleteTd {...sharedProps} />
     </tr>
   )
 }

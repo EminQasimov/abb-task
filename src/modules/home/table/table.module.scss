@@ -20,6 +20,8 @@
 
   tr.deleted {
     background-color: #fee2e2;
+    pointer-events: none;
+    user-select: none;
   }
 
   th {
@@ -39,8 +41,8 @@
 }
 
 .idColCell {
-  background: #fef3c7;
-  color: #78350f;
+  background: #dbeafe;
+  color: #1e40af;
   font-size: 14px;
   padding: 4px 8px;
 }
@@ -55,6 +57,7 @@
 
 .lastCell {
   text-align: right;
+  pointer-events: auto;
 }
 
 .button {
@@ -68,6 +71,10 @@
 
   &:active {
     transform: scale(0.888);
+  }
+
+  &:hover {
+    opacity: 0.8;
   }
 }
 

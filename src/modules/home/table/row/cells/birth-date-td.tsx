@@ -1,6 +1,6 @@
 import React from "react"
 // import { Calendar } from "primereact/calendar"
-import { InlineForm } from "components/inline-form"
+import { InlineForm } from "components/inline-form/inline-form"
 import { formatDate } from "utils"
 import { DateIcon } from "assets/icons"
 import { DatePicker } from "components/date-picker"

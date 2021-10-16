@@ -1,8 +1,8 @@
-import { useState, useRef, ReactChild } from "react"
-import useOnClickOutside from "hooks/use-outside-click"
+import { useState, ReactChild } from "react"
 import { CancelIcon, CheckIcon, EditIcon } from "assets/icons"
 
 import styles from "./inline-form.module.scss"
+import useClickOutside from "hooks/use-click-outside"
 
 type InlineFormProps = {
   viewMode: ReactChild
@@ -21,7 +21,6 @@ export const InlineForm = (props: InlineFormProps) => {
     disabled = false,
   } = props
   const [isEdit, setEdit] = useState(false)
-  const ref = useRef<HTMLFormElement>(null)
 
   function closeCallback() {
     setEdit(false)
@@ -31,9 +30,10 @@ export const InlineForm = (props: InlineFormProps) => {
     onCancel(closeCallback)
   }
 
+  const ref = useClickOutside(cancelEditing)
+
   const form = (
     <form
-      ref={ref}
       onSubmit={(e) => {
         e.preventDefault()
         onSubmit(closeCallback)
@@ -61,10 +61,8 @@ export const InlineForm = (props: InlineFormProps) => {
     </form>
   )
 
-  useOnClickOutside(ref, cancelEditing)
-
   return (
-    <div className={styles.content}>
+    <div className={styles.content} ref={ref}>
       {isEdit && !disabled ? (
         form
       ) : (

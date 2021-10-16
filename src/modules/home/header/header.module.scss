@@ -29,6 +29,9 @@
     &.active {
       background-color: #2563eb;
       color: #fff;
+    }
+
+    &:hover {
       box-shadow: 0 0 0 2px #bfdbfe;
     }
   }
@@ -42,8 +45,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #d1fae5;
-  color: #064e3b;
+  background: #fde68a;
+  color: #78350f;
   font-size: 14px;
   padding: 4px;
   width: 22px;

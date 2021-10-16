@@ -74,16 +74,27 @@ const Home = (props: PageProps) => {
     )
   } else if (isLoading) {
     tableContent = <TableSkeletonLoader rowCount={10} cellCount={7} />
-  } else if (employees) {
+  } else if (employees && employees.length > 0) {
     tableContent = employees.map((employee: Employee) => (
       <Row
         key={employee.id}
         employee={employee}
-        search={search as string}
+        search={search}
         loadTable={refetch}
         deleted={filter === "deleted"}
       />
     ))
+  } else {
+    tableContent = (
+      <tr>
+        <td colSpan={7}>
+          <div className="empty-state">
+            <img src="/empty.png" alt="" width="200px" />
+            <h1>Nothing here to show </h1>
+          </div>
+        </td>
+      </tr>
+    )
   }
 
   function handleSearch(search: string) {

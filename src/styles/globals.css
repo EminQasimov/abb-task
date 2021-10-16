@@ -28,3 +28,13 @@ a {
   display: flex;
   justify-content: flex-end;
 }
+
+.empty-state {
+  margin: 100px auto;
+  max-width: 400px;
+  text-align: center;
+}
+.empty-state h1 {
+  font: inherit;
+  font-size: 32px;
+}

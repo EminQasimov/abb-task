@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from "react"
-import { InlineForm } from "components/inline-form"
+import { InlineForm } from "components/inline-form/inline-form"
 import { Input } from "components/input"
 
 import Highlighter from "react-highlight-words"
 import { confirmDialog } from "primereact/confirmdialog"
 import useFetch from "hooks/use-fetch"
 
-type SharedProps = {
+export type SharedProps = {
   initialValue: string
   field: string
-  search: string
+  search: string | undefined
   id: string
-  reload: () => void
+  loadTable: () => void
   deleted: boolean
 }
 
 export const SharedTd = (props: SharedProps) => {
-  const { initialValue, id, field, deleted } = props
+  const { initialValue, id, field, search = "", deleted } = props
   const [value, setValue] = useState(() => initialValue ?? "")
 
   const { refetch } = useFetch({
@@ -29,7 +29,7 @@ export const SharedTd = (props: SharedProps) => {
     },
     queryEnabled: false,
     onSuccess: () => {
-      props.reload()
+      props.loadTable()
     },
   })
 
@@ -79,16 +79,15 @@ export const SharedTd = (props: SharedProps) => {
         disabled={deleted}
         viewMode={
           <Highlighter
-            searchWords={props.search.split("")}
+            searchWords={search.split("")}
             textToHighlight={value}
             autoEscape
           />
         }
-        renderEditMode={(closer) => (
+        renderEditMode={() => (
           <Input
             value={value}
             onChange={(e) => setValue(e.target.value)}
-            onBlur={() => handleCancel(closer)}
             autoFocus
           />
         )}

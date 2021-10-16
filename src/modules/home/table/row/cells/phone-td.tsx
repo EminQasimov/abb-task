@@ -1,6 +1,6 @@
 import React from "react"
 import { InputText } from "primereact/inputtext"
-import { InlineForm } from "components/inline-form"
+import { InlineForm } from "components/inline-form/inline-form"
 import { PhoneIcon } from "assets/icons"
 
 import styles from "../../table.module.scss"

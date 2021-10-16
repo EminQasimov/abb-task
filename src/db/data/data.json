@@ -1,17 +1,17 @@
 {
   "employees": [
     {
-      "id": "HgD83bYgFB",
-      "name": "Aqila",
-      "surname": "Əliyev",
-      "birthDate": "2021-04-05T20:58:44.530Z",
-      "position": "Liaison",
-      "phone": "(997)138-87-81"
+      "id": "jDR5yEB87E",
+      "name": "Aygüloo",
+      "surname": "asd",
+      "birthDate": "2021-04-19T08:49:31.520Z",
+      "position": "Producer",
+      "phone": "(946)733-48-57"
     },
     {
       "id": "jPFR-hd859",
-      "name": "Rəşad",
-      "surname": "Məmmədov",
+      "name": "Rəşaddd",
+      "surname": "Məmmədovs",
       "birthDate": "2021-02-10T12:10:58.917Z",
       "position": "Designer",
       "phone": "(942)194-81-33"
@@ -19,7 +19,7 @@
     {
       "id": "iANQ8xGUNN",
       "name": "Cansu",
-      "surname": "Qasımova",
+      "surname": "Qasımovas",
       "birthDate": "2021-05-09T18:19:28.212Z",
       "position": "Director",
       "phone": "(964)397-37-42"
@@ -29,13 +29,13 @@
       "name": "İlham",
       "surname": "Xəlilov",
       "birthDate": "2021-08-28T05:51:47.580Z",
-      "position": "Agent",
+      "position": "Agento",
       "phone": "(902)426-13-79"
     },
     {
       "id": "n_Fkd8c08l",
-      "name": "Emilasdqw",
-      "surname": "Quliyev",
+      "name": "Emilasd",
+      "surname": "Quliyevasdasd",
       "birthDate": "2021-09-17T02:52:47.275Z",
       "position": "Executive",
       "phone": "(905)277-35-75"
@@ -367,34 +367,6 @@
       "birthDate": "2020-11-18T21:24:42.931Z",
       "position": "Officer",
       "phone": "(937)485-92-46"
-    }
-  ],
-  "initialEmployees": {
-    "HgD83bYgFB": {
-      "id": "HgD83bYgFB",
-      "name": "Aqil",
-      "surname": "Əliyev",
-      "birthDate": "2021-04-05T20:58:44.530Z",
-      "position": "Liaison",
-      "phone": "(997)138-87-81"
-    },
-    "n_Fkd8c08l": {
-      "id": "n_Fkd8c08l",
-      "name": "Emilasd",
-      "surname": "Quliyev",
-      "birthDate": "2021-09-17T02:52:47.275Z",
-      "position": "Executive",
-      "phone": "(905)277-35-75"
-    }
-  },
-  "deletedEmployees": [
-    {
-      "id": "jDR5yEB87E",
-      "name": "Aygül",
-      "surname": "Rəşidova",
-      "birthDate": "2021-04-19T08:49:31.520Z",
-      "position": "Producer",
-      "phone": "(946)733-48-57"
     },
     {
       "id": "_DeVTEJiqb",
@@ -419,6 +391,42 @@
       "birthDate": "2021-01-29T22:16:03.293Z",
       "position": "Facilitator",
       "phone": "(984)868-97-38"
+    }
+  ],
+  "initialEmployees": {
+    "jPFR-hd859": {
+      "id": "jPFR-hd859",
+      "name": "Rəşad",
+      "surname": "Məmmədovs",
+      "birthDate": "2021-02-10T12:10:58.917Z",
+      "position": "Designer",
+      "phone": "(942)194-81-33"
+    },
+    "n_Fkd8c08l": {
+      "id": "n_Fkd8c08l",
+      "name": "Emilasd",
+      "surname": "Quliyev",
+      "birthDate": "2021-09-17T02:52:47.275Z",
+      "position": "Executive",
+      "phone": "(905)277-35-75"
+    },
+    "jDR5yEB87E": {
+      "id": "jDR5yEB87E",
+      "name": "Aygüloo",
+      "surname": "Rəşidovatyutuy",
+      "birthDate": "2021-04-19T08:49:31.520Z",
+      "position": "Producer",
+      "phone": "(946)733-48-57"
+    }
+  },
+  "deletedEmployees": [
+    {
+      "id": "HgD83bYgFB",
+      "name": "Aqil",
+      "surname": "Əliyev",
+      "birthDate": "2021-04-05T20:58:44.530Z",
+      "position": "Liaison",
+      "phone": "(997)138-87-81"
     }
   ]
 }
