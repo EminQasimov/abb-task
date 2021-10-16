@@ -1,9 +1,13 @@
-// import Image from 'next/image'
+import styles from "./layout.module.scss"
 
 const Header = () => {
   return (
-    <header>
-      <div></div>
+    <header className={styles.header}>
+      <div>
+        <img src="/abb-logo.png" height="50px" />
+      </div>
+      <span></span>
+      <h1>Challenge Task</h1>
     </header>
   )
 }

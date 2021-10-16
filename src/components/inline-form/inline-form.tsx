@@ -3,12 +3,13 @@ import { CancelIcon, CheckIcon, EditIcon } from "assets/icons"
 
 import styles from "./inline-form.module.scss"
 import useClickOutside from "hooks/use-click-outside"
+import { noop } from "types"
 
 type InlineFormProps = {
   viewMode: ReactChild
-  renderEditMode: (close: () => void) => ReactChild
-  onSubmit: (close: () => void) => void
-  onCancel: (close: () => void) => void
+  renderEditMode: (isEdit: boolean) => ReactChild
+  onSubmit: (close: noop) => void
+  onCancel: (close: noop) => void
   disabled?: boolean
 }
 
@@ -40,7 +41,7 @@ export const InlineForm = (props: InlineFormProps) => {
       }}
       className={styles.form}
     >
-      <div className={styles.editWrap}>{renderEditMode(closeCallback)}</div>
+      <div className={styles.editWrap}>{renderEditMode(isEdit)}</div>
       <div className={styles.formButtons}>
         <button
           aria-label="save editing"
@@ -70,6 +71,7 @@ export const InlineForm = (props: InlineFormProps) => {
           role="button"
           className={styles.viewModeWrap}
           onClick={() => setEdit(true)}
+          title="Double click to edit"
         >
           {viewMode}
           <EditIcon fontSize={20} className={styles.editIcon} />

@@ -30,11 +30,29 @@ a {
 }
 
 .empty-state {
-  margin: 100px auto;
+  margin: 0px auto;
+  height: 390px;
   max-width: 400px;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
+
 .empty-state h1 {
   font: inherit;
-  font-size: 32px;
+  font-size: 22px;
+  color: #9ca3af;
+  font-weight: 300;
+}
+
+.empty-state img {
+  animation: mover 2s ease-in-out infinite alternate;
+}
+
+@keyframes mover {
+  50% {
+    transform: translateY(-10px);
+  }
 }

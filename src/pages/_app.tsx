@@ -3,7 +3,7 @@ import { AppProps } from "next/app"
 import Head from "next/head"
 
 import defaultSEOConfig from "../../next-seo.config"
-import Layout from "components/layout"
+import { Layout } from "components"
 
 import "@fontsource/lexend/latin.css"
 import "styles/globals.css"

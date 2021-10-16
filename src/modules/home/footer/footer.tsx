@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { Paginator, PaginatorPageState } from "primereact/paginator"
 import { Dialog } from "primereact/dialog"
+import { LIMIT } from "configs"
 
 import styles from "./footer.module.scss"
 
@@ -42,7 +43,7 @@ export default function Footer(props: FooterProps) {
         <div>
           <Paginator
             // Zero-relative number of the first row to be displayed.
-            first={(currentPage - 1) * 10}
+            first={(currentPage - 1) * LIMIT}
             // Data count to display per page.
             rows={10}
             totalRecords={totalEmployeesCount}

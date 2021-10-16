@@ -1,25 +1,30 @@
 import React, { useEffect, useState } from "react"
-import { InlineForm } from "components/inline-form/inline-form"
-import { Input } from "components/input"
+import { InlineForm, Input } from "components"
 
 import Highlighter from "react-highlight-words"
 import { confirmDialog } from "primereact/confirmdialog"
 import useFetch from "hooks/use-fetch"
+
+import { StringSchema } from "yup"
+import { noop } from "types"
 
 export type SharedProps = {
   initialValue: string
   field: string
   search: string | undefined
   id: string
-  loadTable: () => void
+  loadTable: noop
   deleted: boolean
+  schema: StringSchema
 }
 
 export const SharedTd = (props: SharedProps) => {
-  const { initialValue, id, field, search = "", deleted } = props
+  const { initialValue, id, field, search = "", deleted, schema } = props
   const [value, setValue] = useState(() => initialValue ?? "")
+  const [errors, setErrors] = useState([])
+  const isValueNotChanged = value === initialValue
 
-  const { refetch } = useFetch({
+  const { refetch: saveValue } = useFetch({
     url: `/api/employees/${id}`,
     fetchOptions: {
       method: "PATCH",
@@ -33,16 +38,24 @@ export const SharedTd = (props: SharedProps) => {
     },
   })
 
-  function handleSubmit(closeCallback: () => void) {
-    if (value.trim() === initialValue.trim()) {
+  function handleSubmit(closeCallback: noop) {
+    if (isValueNotChanged) {
       closeCallback()
       return
     }
-    refetch(closeCallback)
+
+    schema
+      .validate(value)
+      .then(() => {
+        saveValue(closeCallback)
+      })
+      .catch(function (err) {
+        setErrors(err.errors)
+      })
   }
 
-  function handleCancel(closeCallback: () => void) {
-    if (value.trim() === initialValue.trim()) {
+  function handleCancel(closeCallback: noop) {
+    if (isValueNotChanged) {
       closeCallback()
       return
     }
@@ -50,8 +63,8 @@ export const SharedTd = (props: SharedProps) => {
     confirmDialog({
       message: (
         <div>
-          Are you sure you want to proceed without saving <br />
-          <strong>{value}</strong> ?
+          Are you sure you want to proceed without <br />
+          saving <strong>{value}</strong> ?
         </div>
       ),
       header: "Confirmation",
@@ -64,7 +77,7 @@ export const SharedTd = (props: SharedProps) => {
         setValue(initialValue)
       },
       accept: () => {
-        refetch(closeCallback)
+        handleSubmit(closeCallback)
       },
     })
   }
@@ -89,6 +102,7 @@ export const SharedTd = (props: SharedProps) => {
             value={value}
             onChange={(e) => setValue(e.target.value)}
             autoFocus
+            errors={errors}
           />
         )}
         onSubmit={handleSubmit}

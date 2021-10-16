@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  align-items: center;
+  margin: 20px auto;
+
+  span {
+    width: 2px;
+    height: 40px;
+    background: #d1d5db;
+    margin: 0 24px;
+  }
+  h1 {
+    font: inherit;
+    font-size: 20px;
+    color: #374151;
+  }
+}

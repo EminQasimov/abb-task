@@ -1,3 +1,4 @@
+import { LIMIT } from "configs"
 import { deletedEmployees, employees, getUpdatedEmployees } from "db"
 import { matchSorter } from "match-sorter"
 import { Employee } from "types/employee"
@@ -18,7 +19,7 @@ export function getEmployees(params: QueryParams) {
   const { page, limit, search, filter } = params
 
   let currentPage = Number(page) || 1
-  let limitCount = Number(limit) || 10
+  let limitCount = Number(limit) || LIMIT
   let totalEmployeesCount = 0
 
   let filteredEmployees: Employee[] = []

@@ -10,6 +10,7 @@ import { changeUrlParamsSilently, removeEmptyValues } from "utils"
 
 import { Employee } from "types/employee"
 import { PaginatorPageState } from "primereact/paginator"
+import { LIMIT } from "configs"
 
 export type PageProps = {
   employees: Employee[]
@@ -24,6 +25,8 @@ export type HomeState = {
   search: string
   filter: string
 }
+
+const COL_COUNT = 7
 
 const Home = (props: PageProps) => {
   const router = useRouter()
@@ -67,13 +70,15 @@ const Home = (props: PageProps) => {
   if (error && !isLoading) {
     tableContent = (
       <tr>
-        <td colSpan={7}>
+        <td colSpan={COL_COUNT}>
           <div>Failed to load employees</div>
         </td>
       </tr>
     )
   } else if (isLoading) {
-    tableContent = <TableSkeletonLoader rowCount={10} cellCount={7} />
+    tableContent = (
+      <TableSkeletonLoader rowCount={LIMIT} cellCount={COL_COUNT} />
+    )
   } else if (employees && employees.length > 0) {
     tableContent = employees.map((employee: Employee) => (
       <Row
@@ -87,10 +92,10 @@ const Home = (props: PageProps) => {
   } else {
     tableContent = (
       <tr>
-        <td colSpan={7}>
+        <td colSpan={COL_COUNT}>
           <div className="empty-state">
-            <img src="/empty.png" alt="" width="200px" />
-            <h1>Nothing here to show </h1>
+            <img src="/empty.png" alt="" width="180px" />
+            <h1>Nothing here to see! </h1>
           </div>
         </td>
       </tr>

@@ -1,4 +1,28 @@
-.inputWrapper {
+.datepicker {
+  font: inherit;
+  width: 320px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border-color: #d1d5db;
+
+  :global(.rc-calendar-input) {
+    height: 40px;
+    border: 2px solid #e5e7eb;
+    padding: 12px;
+    font: inherit;
+    color: rgb(75, 85, 99);
+    background: #fff;
+    font-size: 16px;
+
+    &:focus {
+      border: 2px solid #60a5fa;
+      outline: none;
+    }
+
+    // &.errored {
+    //   border-color: #dc2626;
+    // }
+  }
 }
 
 .input {

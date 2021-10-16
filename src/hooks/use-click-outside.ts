@@ -11,8 +11,9 @@ export default function useClickOutside(callback: EventListener) {
     }
     // Do nothing if clicking ref's element or descendent elements and modals open
     const modal = document.querySelector(".p-dialog-mask")
+    const datepicker = document.querySelector(".rc-calendar-picker")
 
-    if (container.current && e.target !== null && !modal) {
+    if (container.current && e.target !== null && !modal && !datepicker) {
       if (!container.current.contains(e.target as Node)) {
         callback(e)
       }
@@ -25,7 +26,7 @@ export default function useClickOutside(callback: EventListener) {
     return () => {
       document.removeEventListener(eventType, handleEvent, true)
     }
-  })
+  }, [eventType, handleEvent])
 
   useEffect(() => {
     setTouchEvent("ontouchstart" in document.documentElement)
