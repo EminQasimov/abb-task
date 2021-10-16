@@ -10,17 +10,12 @@ type InlineFormProps = {
   renderEditMode: (isEdit: boolean) => ReactChild
   onSubmit: (close: noop) => void
   onCancel: (close: noop) => void
-  disabled?: boolean
 }
-
+/**
+ * @description View/Edit mode toggler
+ */
 export const InlineForm = (props: InlineFormProps) => {
-  const {
-    renderEditMode,
-    viewMode,
-    onSubmit,
-    onCancel,
-    disabled = false,
-  } = props
+  const { renderEditMode, viewMode, onSubmit, onCancel } = props
   const [isEdit, setEdit] = useState(false)
 
   function closeCallback() {
@@ -64,14 +59,14 @@ export const InlineForm = (props: InlineFormProps) => {
 
   return (
     <div className={styles.content} ref={ref}>
-      {isEdit && !disabled ? (
+      {isEdit ? (
         form
       ) : (
         <button
           role="button"
           className={styles.viewModeWrap}
           onClick={() => setEdit(true)}
-          title="Double click to edit"
+          title="Click to edit"
         >
           {viewMode}
           <EditIcon fontSize={20} className={styles.editIcon} />

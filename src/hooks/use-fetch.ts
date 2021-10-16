@@ -15,6 +15,10 @@ type HookState = {
   error: any
 }
 
+/**
+ * @description my simple 😎 use-query alternative hook for dealing with
+ * data fetching states.
+ */
 export default function useFetch(props: HookProps) {
   const {
     url,
@@ -27,38 +31,44 @@ export default function useFetch(props: HookProps) {
   const [state, setState] = useState<HookState>(() => {
     return {
       isLoading: false,
-      data: initialData ?? {},
       isError: false,
       error: null,
+      data: initialData ?? {},
     }
   })
 
   const { isLoading, isError, error, data } = state
 
+  function update(args: Object) {
+    setState((prev) => ({
+      ...prev,
+      ...args,
+    }))
+  }
+
   const refetch = useCallback(
     async (onDone?: () => void) => {
-      setState((prev) => ({
-        ...prev,
+      update({
         isLoading: true,
-      }))
+      })
 
       try {
         const data = await fetch(url, fetchOptions).then((res) => res.json())
 
-        setState(() => ({
+        update({
           isError: false,
           isLoading: false,
           error: null,
           data,
-        }))
+        })
+
         onSuccess()
       } catch (error) {
-        setState((prev) => ({
-          ...prev,
+        update({
           isLoading: false,
           isError: true,
           error,
-        }))
+        })
       } finally {
         onDone?.()
       }

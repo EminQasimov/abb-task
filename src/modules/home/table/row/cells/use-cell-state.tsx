@@ -1,26 +1,20 @@
 import React, { useEffect, useState } from "react"
 import { InlineForm, Input } from "components"
 
-import Highlighter from "react-highlight-words"
 import { confirmDialog } from "primereact/confirmdialog"
 import useFetch from "hooks/use-fetch"
 
 import { StringSchema } from "yup"
 import { noop } from "types"
 
-export type SharedProps = {
-  initialValue: string
-  field: string
-  search: string | undefined
-  id: string
-  loadTable: noop
-  schema: StringSchema
-}
+export type HookProps = {}
 
-export const SharedTd = (props: SharedProps) => {
+export default function useCellState(props: HookProps) {
   const { initialValue, id, field, search = "", schema } = props
+
   const [value, setValue] = useState(() => initialValue ?? "")
   const [errors, setErrors] = useState([])
+
   const isValueNotChanged = value === initialValue
 
   const { refetch: saveValue } = useFetch({
@@ -47,7 +41,7 @@ export const SharedTd = (props: SharedProps) => {
       .then(() => {
         saveValue(closeCallback)
       })
-      .catch((err) => {
+      .catch((err: any) => {
         setErrors(err.errors)
       })
   }
@@ -84,27 +78,9 @@ export const SharedTd = (props: SharedProps) => {
     setValue(initialValue)
   }, [initialValue])
 
-  return (
-    <td>
-      <InlineForm
-        viewMode={
-          <Highlighter
-            searchWords={search.split("")}
-            textToHighlight={value}
-            autoEscape
-          />
-        }
-        renderEditMode={() => (
-          <Input
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
-            autoFocus
-            errors={errors}
-          />
-        )}
-        onSubmit={handleSubmit}
-        onCancel={handleCancel}
-      />
-    </td>
-  )
+  return {
+    handleCancel,
+    handleSubmit,
+    saveValue,
+  }
 }

@@ -1,4 +1,5 @@
-import { InputText } from "primereact/inputtext"
+import { CancelIcon, SearchIcon } from "assets/icons"
+import { Input } from "components"
 import { useState } from "react"
 
 import styles from "./header.module.scss"
@@ -8,36 +9,35 @@ interface SearchProps {
   initialValue: string
 }
 
-export default function Search({ onSearch, initialValue }: SearchProps) {
+export default function Search(props: SearchProps) {
+  const { onSearch, initialValue } = props
   const [value, setValue] = useState(() => initialValue)
 
   return (
     <form
-      className="search-container"
-      onSubmit={function handleSubmit(e) {
+      className={styles.searchContainer}
+      onSubmit={(e) => {
         e.preventDefault()
         onSearch(value)
       }}
     >
-      <span className="p-input-icon-right">
-        <InputText
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
-          placeholder="Search"
-          className={styles.searchInput}
-        />
-        {value ? (
-          <i
-            className="pi pi-times"
-            onClick={() => {
-              setValue("")
-              onSearch("")
-            }}
-          />
-        ) : (
-          <i className="pi pi-search" />
-        )}
-      </span>
+      <Input
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        placeholder="Search"
+        className={styles.searchInput}
+      />
+      <button
+        type="button"
+        onClick={() => {
+          if (value) {
+            setValue("")
+            onSearch("")
+          }
+        }}
+      >
+        {value ? <CancelIcon /> : <SearchIcon fontSize={16} />}
+      </button>
     </form>
   )
 }

@@ -16,7 +16,6 @@ module.exports = {
         ignored: [...config.watchOptions.ignored, "**/src/db/data/**"],
       }
     }
-
     return config
   },
 }

@@ -1,10 +1,10 @@
 import { LIMIT } from "configs"
 import { deletedEmployees, employees, getUpdatedEmployees } from "db"
 import { matchSorter } from "match-sorter"
-import { Employee } from "types/employee"
+import { Employee } from "types"
 
-//  page numbers start with 1
-function paginate(array: any[], limit: number, page: number) {
+// page numbers start with 1
+function paginate(array: Employee[], limit: number, page: number) {
   return array.slice((page - 1) * limit, page * limit)
 }
 

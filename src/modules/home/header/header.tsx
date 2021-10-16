@@ -27,7 +27,7 @@ export default function Header(props: HeaderProps) {
     setState((prev: HomeState) => ({
       ...prev,
       queryEnabled: true,
-      currentPage: 1,
+      page: 1,
       ...options,
     }))
   }
@@ -60,18 +60,20 @@ export default function Header(props: HeaderProps) {
         >
           All employees
         </button>
+
         <button
           onClick={handleUpdatedFilter}
           className={filter === "updated" ? styles.active : ""}
         >
-          <strong className={styles.countBadge}>{updatedEmployeesCount}</strong>{" "}
+          <strong className={styles.countBadge}>{updatedEmployeesCount}</strong>
           Updated employees
         </button>
+
         <button
           onClick={handleDeletedFilter}
           className={filter === "deleted" ? styles.active : ""}
         >
-          <strong className={styles.countBadge}>{deletedEmployeesCount}</strong>{" "}
+          <strong className={styles.countBadge}>{deletedEmployeesCount}</strong>
           Deleted employees
         </button>
       </div>

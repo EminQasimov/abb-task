@@ -1,7 +1,7 @@
 import faker from "faker"
 import { nanoid } from "nanoid"
 
-import { Employee } from "types/employee"
+import { Employee } from "types"
 
 faker.locale = "az"
 

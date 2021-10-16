@@ -1,3 +1,4 @@
+import { LinkIcon } from "assets/icons"
 import styles from "./layout.module.scss"
 
 const Header = () => {
@@ -6,8 +7,12 @@ const Header = () => {
       <div>
         <img src="/abb-logo.png" height="50px" />
       </div>
-      <span></span>
-      <h1>Challenge Task</h1>
+      <span />
+      <h1>Challenge Task </h1>
+      <span />
+      <a href="https://emin-qasimov.web.app" target="_blank">
+        Emin Qasimov <LinkIcon fontSize={16} />
+      </a>
     </header>
   )
 }

@@ -1,5 +1,5 @@
 import { deletedEmployees, employees, initialEmployees } from "db"
-import { Employee } from "types/employee"
+import { Employee } from "types"
 
 export function getUpdatedEmployees() {
   const updated = Object.keys(initialEmployees).reduce((acc, nextKey) => {

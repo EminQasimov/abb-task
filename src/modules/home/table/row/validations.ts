@@ -1,7 +1,10 @@
 // @ts-nocheck
 import * as yup from "yup"
 
-const nonLetterSymbols = /[0-9]|[,~!@#$%^&*()_+{}|":>?<.';/`\]\[= -]|\\/g
+// non letter symbols regex that user can type on keyboard.
+const nonLetterSymbols = /[0-9]|[,~!@#$%^&*()_+{}|":>?<.';/`\]\[=-]|\\/g
+
+// masked input adds _ symbol on empty places. if undescore has, so it is invalid.
 const invalidPhone = /_/g
 
 function isAlpha(message: string) {

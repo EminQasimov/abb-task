@@ -1,58 +1,9 @@
 html,
 body {
-  padding: 0;
   margin: 0;
   font-family: Lexend, sans-serif;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
 * {
   box-sizing: border-box;
-}
-
-.layout-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.layout-content {
-  min-height: 100vh;
-}
-
-.search-container {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.empty-state {
-  margin: 0px auto;
-  height: 390px;
-  max-width: 400px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.empty-state h1 {
-  font: inherit;
-  font-size: 22px;
-  color: #9ca3af;
-  font-weight: 300;
-}
-
-.empty-state img {
-  animation: mover 2s ease-in-out infinite alternate;
-}
-
-@keyframes mover {
-  50% {
-    transform: translateY(-10px);
-  }
 }

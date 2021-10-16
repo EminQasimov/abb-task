@@ -2,11 +2,7 @@ const Footer = () => {
   return (
     <div style={{ margin: "60px auto", maxWidth: 200 }}>
       &copy; {new Date().getFullYear()} -{" "}
-      <a
-        href="https://emin-qasimov.web.app"
-        target="_blank"
-        style={{ textDecoration: "underline" }}
-      >
+      <a href="https://emin-qasimov.web.app" target="_blank">
         Emin Qasimov
       </a>
     </div>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { InlineForm, Input, MaskedInput } from "components"
+import { InlineForm, MaskedInput } from "components"
 import { confirmDialog } from "primereact/confirmdialog"
 import useFetch from "hooks/use-fetch"
 import { StringSchema } from "yup"
@@ -11,12 +11,11 @@ export type SharedProps = {
   search: string | undefined
   id: string
   loadTable: () => void
-  deleted: boolean
   schema: StringSchema
 }
 
 export const PhoneTd = (props: SharedProps) => {
-  const { initialValue, id, field, search = "", deleted, schema } = props
+  const { initialValue, id, field, schema } = props
   const [value, setValue] = useState(() => initialValue ?? "")
   const [errors, setErrors] = useState([])
   const isValueNotChanged = value === initialValue
@@ -46,7 +45,7 @@ export const PhoneTd = (props: SharedProps) => {
       .then(() => {
         saveValue(closeCallback)
       })
-      .catch(function (err) {
+      .catch((err) => {
         setErrors(err.errors)
       })
   }
@@ -86,7 +85,6 @@ export const PhoneTd = (props: SharedProps) => {
   return (
     <td>
       <InlineForm
-        disabled={deleted}
         viewMode={value}
         renderEditMode={() => (
           <MaskedInput

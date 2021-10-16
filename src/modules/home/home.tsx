@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react"
 import { useRouter } from "next/router"
 
 import Header from "./header/header"
-import { Table, Row, TableSkeletonLoader } from "./table"
+import { Table, Row, TableSkeletonLoader, EmptyLayout } from "./table"
 import Footer from "./footer/footer"
 
 import useFetch from "hooks/use-fetch"
 import { changeUrlParamsSilently, removeEmptyValues } from "utils"
 
-import { Employee } from "types/employee"
+import { Employee } from "types"
 import { PaginatorPageState } from "primereact/paginator"
 import { LIMIT } from "configs"
 
@@ -21,31 +21,32 @@ export type PageProps = {
 
 export type HomeState = {
   queryEnabled: boolean
-  currentPage: number
+  page: number
   search: string
   filter: string
 }
 
-const COL_COUNT = 7
+const COL_COUNT = 7 // table columns count
 
 const Home = (props: PageProps) => {
   const router = useRouter()
 
   const [state, setState] = useState<HomeState>(() => {
-    const currentPage = Number(router.query.page) || 1
+    const page = Number(router.query.page) || 1
 
     return {
       queryEnabled: false,
-      currentPage,
+      page,
       search: router.query.search ? String(router.query.search) : "",
       filter: router.query.filter ? String(router.query.filter) : "all",
     }
   })
 
-  const { queryEnabled, currentPage, search, filter } = state
+  const { queryEnabled, page, search, filter } = state
 
+  // don't show empty values in url bar
   let params = removeEmptyValues({
-    page: currentPage,
+    page,
     search,
     filter,
   })
@@ -53,13 +54,9 @@ const Home = (props: PageProps) => {
 
   const { data, isLoading, error, refetch } = useFetch({
     url: `/api/employees?${searchParams}`,
-    initialData: {
-      ...props,
-    },
+    initialData: props,
     queryEnabled,
   })
-
-  let tableContent = null
   const {
     employees,
     deletedEmployeesCount,
@@ -67,19 +64,19 @@ const Home = (props: PageProps) => {
     totalEmployeesCount,
   } = data || {}
 
+  let tableContent = null
+
   if (error && !isLoading) {
     tableContent = (
-      <tr>
-        <td colSpan={COL_COUNT}>
-          <div>Failed to load employees</div>
-        </td>
-      </tr>
+      <EmptyLayout colSpan={COL_COUNT}>
+        <div>Failed to load employees</div>
+      </EmptyLayout>
     )
   } else if (isLoading) {
     tableContent = (
       <TableSkeletonLoader rowCount={LIMIT} cellCount={COL_COUNT} />
     )
-  } else if (employees && employees.length > 0) {
+  } else if (employees?.length > 0) {
     tableContent = employees.map((employee: Employee) => (
       <Row
         key={employee.id}
@@ -91,14 +88,10 @@ const Home = (props: PageProps) => {
     ))
   } else {
     tableContent = (
-      <tr>
-        <td colSpan={COL_COUNT}>
-          <div className="empty-state">
-            <img src="/empty.png" alt="" width="180px" />
-            <h1>Nothing here to see! </h1>
-          </div>
-        </td>
-      </tr>
+      <EmptyLayout colSpan={COL_COUNT}>
+        <h1>Nothing here to see! </h1>
+        <div>or Check, search filter is not applied</div>
+      </EmptyLayout>
     )
   }
 
@@ -107,7 +100,7 @@ const Home = (props: PageProps) => {
 
     setState((prev) => ({
       ...prev,
-      currentPage: 1,
+      page: 1,
       search,
       queryEnabled: true,
     }))
@@ -119,14 +112,14 @@ const Home = (props: PageProps) => {
     setState((prev) => ({
       ...prev,
       queryEnabled: true,
-      currentPage: nextPage,
+      page: nextPage,
     }))
   }
 
   useEffect(() => {
-    changeUrlParamsSilently("page", String(currentPage))
+    changeUrlParamsSilently("page", String(page))
     changeUrlParamsSilently("filter", filter as string)
-  }, [currentPage, filter])
+  }, [page, filter])
 
   return (
     <div>
@@ -144,7 +137,7 @@ const Home = (props: PageProps) => {
       <Footer
         {...{
           totalEmployeesCount,
-          currentPage,
+          page,
           onPageChange,
           refetch,
         }}

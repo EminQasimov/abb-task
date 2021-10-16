@@ -1,13 +1,15 @@
 {
-  "employees": [
-    {
-      "id": "jPFR-hd859",
-      "name": "Rəşaddd",
-      "surname": "Məmmədo",
-      "birthDate": "2021-05-05T16:10:58+04:00",
-      "position": "Designer",
-      "phone": "(942)194-81-36"
-    },
+  "initialEmployees": {
+    "rPQmC8qAta": {
+      "id": "rPQmC8qAta",
+      "name": "İlham",
+      "surname": "Xəlilov",
+      "birthDate": "2022-09-21T09:51:47+04:00",
+      "position": "Agento",
+      "phone": "(902)426-13-99"
+    }
+  },
+  "deletedEmployees": [
     {
       "id": "jDR5yEB87E",
       "name": "Aygüloo",
@@ -15,28 +17,38 @@
       "birthDate": "2020-01-01T12:49:31+04:00",
       "position": "Producer",
       "phone": "(946)733-48-57"
+    }
+  ],
+  "employees": [
+    {
+      "id": "rPQmC8qAta",
+      "name": "İlham",
+      "surname": "Xəlilov",
+      "birthDate": "2022-09-21T09:51:47+04:00",
+      "position": "Agento sdf",
+      "phone": "(902)426-13-99"
+    },
+    {
+      "id": "jPFR-hd859",
+      "name": "Rəşaddd",
+      "surname": "Məmmədo",
+      "birthDate": "2021-05-13T16:10:58+04:00",
+      "position": "Designer",
+      "phone": "(942)194-81-36"
     },
     {
       "id": "iANQ8xGUNN",
-      "name": "oktay",
+      "name": "ok0",
       "surname": "Əyileva",
       "birthDate": "2021-05-09T18:19:28.212Z",
       "position": "Dire kmk ",
       "phone": "(964)397-37-42"
     },
     {
-      "id": "rPQmC8qAta",
-      "name": "İlham",
-      "surname": "Xəlilov",
-      "birthDate": "2022-09-21T09:51:47+04:00",
-      "position": "Agento",
-      "phone": "(902)426-13-90"
-    },
-    {
       "id": "n_Fkd8c08l",
       "name": "Emilasd",
       "surname": "Quliyev",
-      "birthDate": "1994-09-23T00:00:00+04:00",
+      "birthDate": "2021-09-17T02:52:47.275Z",
       "position": "Executive",
       "phone": "(905)277-35-75"
     },
@@ -45,7 +57,7 @@
       "name": "Gülçin",
       "surname": "Əliyeva",
       "birthDate": "2021-03-12T17:07:50+04:00",
-      "position": "Directorddfg",
+      "position": "Director",
       "phone": "(979)251-35-66"
     },
     {
@@ -54,20 +66,12 @@
       "surname": "Quliyev",
       "birthDate": "2021-02-25T11:02:51.285Z",
       "position": "Assistant",
-      "phone": "(998)875-56-75"
-    },
-    {
-      "id": "lqeJQW-NP_",
-      "name": "Adil",
-      "surname": " ppp",
-      "birthDate": "2021-09-07T12:11:15.529Z",
-      "position": "Agent",
-      "phone": "(918)298-40-16"
+      "phone": "(998)875-10-02"
     },
     {
       "id": "14H4raoW82",
       "name": "Liliya",
-      "surname": "opp",
+      "surname": "tst",
       "birthDate": "2021-02-15T19:54:31.469Z",
       "position": "Executive",
       "phone": "(922)087-82-89"
@@ -84,7 +88,7 @@
       "id": "jSAqzW_txt",
       "name": "Maya",
       "surname": "Soltanova",
-      "birthDate": "2021-05-12T01:43:03+04:00",
+      "birthDate": "2021-05-13T21:43:03.242Z",
       "position": "Representative",
       "phone": "(963)969-62-72"
     },
@@ -333,7 +337,7 @@
       "name": "Adil",
       "surname": "Xəlilov",
       "birthDate": "2021-09-25T10:42:25.653Z",
-      "position": "Fapp",
+      "position": "Facilitator",
       "phone": "(920)514-77-42"
     },
     {
@@ -396,108 +400,17 @@
       "id": "HgD83bYgFB",
       "name": "Aqil",
       "surname": "Əliyev",
-      "birthDate": "2021-04-01T00:58:44+04:00",
-      "position": "Liaison",
-      "phone": "(997)138-87-81"
-    }
-  ],
-  "initialEmployees": {
-    "lqeJQW-NP_": {
-      "id": "lqeJQW-NP_",
-      "name": "Adil",
-      "surname": "",
-      "birthDate": "2021-09-07T12:11:15.529Z",
-      "position": "Agent",
-      "phone": "(918)298-40-16"
-    },
-    "14H4raoW82": {
-      "id": "14H4raoW82",
-      "name": "Liliya",
-      "surname": "",
-      "birthDate": "2021-02-15T19:54:31.469Z",
-      "position": "Executive",
-      "phone": "(922)087-82-89"
-    },
-    "iANQ8xGUNN": {
-      "id": "iANQ8xGUNN",
-      "name": "ok0",
-      "surname": "Əyileva",
-      "birthDate": "2021-05-09T18:19:28.212Z",
-      "position": "Dire kmk ",
-      "phone": "(964)397-37-42"
-    },
-    "jPFR-hd859": {
-      "id": "jPFR-hd859",
-      "name": "Rəşaddd",
-      "surname": "Məmmədo",
-      "birthDate": "2021-05-13T16:10:58+04:00",
-      "position": "Designer",
-      "phone": "(942)194-81-36"
-    },
-    "IC8oUGZN9l": {
-      "id": "IC8oUGZN9l",
-      "name": "Gülçin",
-      "surname": "Əliyeva",
-      "birthDate": "2021-03-12T17:07:50+04:00",
-      "position": "Director",
-      "phone": "(979)251-35-66"
-    },
-    "rPQmC8qAta": {
-      "id": "rPQmC8qAta",
-      "name": "İlham",
-      "surname": "Xəlilov",
-      "birthDate": "2022-09-21T09:51:47+04:00",
-      "position": "Agento",
-      "phone": "(902)426-13-__"
-    },
-    "n_Fkd8c08l": {
-      "id": "n_Fkd8c08l",
-      "name": "Emilasd",
-      "surname": "Quliyev",
-      "birthDate": "2021-09-17T02:52:47.275Z",
-      "position": "Executive",
-      "phone": "(905)277-35-75"
-    },
-    "jDR5yEB87E": {
-      "id": "jDR5yEB87E",
-      "name": "Aygüloo",
-      "surname": "asd234 ;'l;'",
-      "birthDate": "2020-01-01T12:49:31+04:00",
-      "position": "Producer",
-      "phone": "(946)733-48-57"
-    },
-    "HgD83bYgFB": {
-      "id": "HgD83bYgFB",
-      "name": "Aqil",
-      "surname": "Əliyev",
       "birthDate": "2021-04-05T20:58:44.530Z",
       "position": "Liaison",
       "phone": "(997)138-87-81"
     },
-    "RBoCbXtDaF": {
-      "id": "RBoCbXtDaF",
+    {
+      "id": "lqeJQW-NP_",
       "name": "Adil",
-      "surname": "Xəlilov",
-      "birthDate": "2021-09-25T10:42:25.653Z",
-      "position": "Facilitator",
-      "phone": "(920)514-77-42"
-    },
-    "zp__hACm2m": {
-      "id": "zp__hACm2m",
-      "name": "Faiq",
-      "surname": "Quliyev",
-      "birthDate": "2021-02-25T11:02:51.285Z",
-      "position": "Assistant",
-      "phone": "(998)875-10-02"
-    },
-    "jSAqzW_txt": {
-      "id": "jSAqzW_txt",
-      "name": "Maya",
-      "surname": "Soltanova",
-      "birthDate": "2021-05-13T21:43:03.242Z",
-      "position": "Representative",
-      "phone": "(963)969-62-72"
+      "surname": "test",
+      "birthDate": "2021-09-07T12:11:15.529Z",
+      "position": "Agent",
+      "phone": "(918)298-40-16"
     }
-  },
-  "deletedEmployees": []
+  ]
 }

@@ -7,13 +7,13 @@ import styles from "./footer.module.scss"
 
 type FooterProps = {
   totalEmployeesCount: number
-  currentPage: number
+  page: number
   onPageChange: (e: PaginatorPageState) => void
   refetch: () => void
 }
 
 export default function Footer(props: FooterProps) {
-  const { totalEmployeesCount, currentPage, onPageChange, refetch } = props
+  const { totalEmployeesCount, page, onPageChange, refetch } = props
   const [submitData, setSubmitData] = useState(null)
 
   function handleReset() {
@@ -24,6 +24,7 @@ export default function Footer(props: FooterProps) {
     })
   }
 
+  // get updated and deleted employees list for view as json
   function handleSubmit() {
     fetch("/api/employees/submit")
       .then((res) => res.json())
@@ -33,50 +34,45 @@ export default function Footer(props: FooterProps) {
   }
 
   return (
-    <>
-      <div className={styles.footer}>
-        <div>
-          Found{" "}
-          <strong className={styles.resultCount}>{totalEmployeesCount}</strong>{" "}
-          results
-        </div>
-        <div>
-          <Paginator
-            // Zero-relative number of the first row to be displayed.
-            first={(currentPage - 1) * LIMIT}
-            // Data count to display per page.
-            rows={10}
-            totalRecords={totalEmployeesCount}
-            onPageChange={onPageChange}
-          />
-        </div>
+    <div className={styles.footer}>
+      <div>
+        Found
+        <strong className={styles.resultCount}>{totalEmployeesCount}</strong>
+        results
+      </div>
 
-        <div>
-          <button
-            onClick={handleReset}
-            className={`${styles.button} ${styles.resetButton}`}
-          >
-            Reset data
-          </button>
-          <button
-            onClick={handleSubmit}
-            className={`${styles.button} ${styles.submitButton}`}
-          >
-            Submit{" "}
-          </button>
-        </div>
+      <Paginator
+        // Zero-relative number of the first row to be displayed.
+        first={(page - 1) * LIMIT}
+        rows={LIMIT}
+        totalRecords={totalEmployeesCount}
+        onPageChange={onPageChange}
+      />
+
+      <div>
+        <button
+          onClick={handleReset}
+          className={`${styles.button} ${styles.resetButton}`}
+        >
+          Reset data
+        </button>
+        <button
+          onClick={handleSubmit}
+          className={`${styles.button} ${styles.submitButton}`}
+        >
+          Submit
+        </button>
       </div>
 
       <Dialog
         visible={!!submitData}
         header="Submitted data"
-        style={{ width: "50vw" }}
         onHide={() => {
           setSubmitData(null)
         }}
       >
         <pre>{JSON.stringify(submitData, null, 2)}</pre>
       </Dialog>
-    </>
+    </div>
   )
 }

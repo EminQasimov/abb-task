@@ -1,5 +1,5 @@
 import { employees, initialEmployees, saveDb } from "db"
-import { Employee } from "types/employee"
+import { Employee } from "types"
 import { shallowEqual } from "utils"
 
 export function updateEmployee(employeeId: string, body: Partial<Employee>) {

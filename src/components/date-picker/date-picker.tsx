@@ -1,13 +1,14 @@
-import { Moment } from "moment"
-import { Input } from "components"
-import Calendar from "rc-calendar"
-import { readableDateFormat } from "utils"
 // @ts-ignore
 import { default as RCDatePicker } from "rc-calendar/lib/Picker"
+import { useState } from "react"
+import { Moment } from "moment"
+import Calendar from "rc-calendar"
+
+import { Input } from "components"
+import { readableDateFormat } from "utils"
 
 import "rc-calendar/assets/index.css"
 import styles from "./date-picker.module.scss"
-import { useState } from "react"
 
 const multiFormats = ["DD/MM/YYYY", "DD/MM/YY", "DDMMYY", "D/M/YY"]
 
@@ -31,7 +32,6 @@ export function DatePicker(props: DateProps) {
       className={styles.datepicker}
       // @ts-ignore
       clearIcon={() => null}
-      //   focusablePanel={false}
     />
   )
 
@@ -44,10 +44,9 @@ export function DatePicker(props: DateProps) {
       calendar={calendar}
       value={value}
       onChange={onChange}
-      style={{ zIndex: 1001 }}
       open={opened}
       onOpenChange={onOpenChange}
-      // animation="slide-up"
+      style={{ zIndex: 1001 }}
     >
       {({ value }: { value: Moment }) => {
         return (

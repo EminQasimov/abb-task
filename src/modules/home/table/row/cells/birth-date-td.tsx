@@ -14,15 +14,13 @@ import styles from "../../table.module.scss"
 export type SharedProps = {
   initialValue: Moment
   field: string
-  search: string | undefined
   id: string
   loadTable: () => void
-  deleted: boolean
   schema: StringSchema
 }
 
 export const BirthDateTd = (props: SharedProps) => {
-  const { initialValue, id, field, search = "", deleted, schema } = props
+  const { initialValue, id, field, schema } = props
   const [value, setValue] = useState(() => initialValue)
   const [errors, setErrors] = useState([])
   const isValueNotChanged = value?.isSame(initialValue) ?? true
@@ -86,7 +84,6 @@ export const BirthDateTd = (props: SharedProps) => {
   return (
     <td>
       <InlineForm
-        disabled={deleted}
         viewMode={
           <div className={styles.cellViewMode}>
             <DateIcon fontSize={20} />

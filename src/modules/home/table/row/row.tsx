@@ -1,11 +1,11 @@
 import moment from "moment"
 
 import { BirthDateTd, PhoneTd, SharedTd, DeleteTd } from "./cells"
-import { Employee } from "types/employee"
 import { textSchema, phoneSchema } from "./validations"
 
 import styles from "../table.module.scss"
-import { noop } from "types"
+
+import { Employee, noop } from "types"
 
 type RowProps = {
   employee: Employee
@@ -21,7 +21,6 @@ export const Row = (props: RowProps) => {
   const sharedProps = {
     search,
     loadTable,
-    deleted,
     id,
     schema: textSchema,
   }
