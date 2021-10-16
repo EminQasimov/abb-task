@@ -1,16 +1,35 @@
-# ABB task
+# ABB challenge task
 
 ![logo](./public/abb-logo.png)
 
-This is a `Next.js` project bootstrapped with `create-next-app`, added with `Primereact UI` and `TypeScript` setup.
+# My notes
 
-To start, run the development server: Open [http://localhost:3000](http://localhost:3000)
+This is a `Next.js` project bootstrapped with `create-next-app` and `TypeScript` setup.
+
+App state is saved in server local file system. For near real case simulation purpose I had used next.js /api route concept. not in browser memory or localstorage.
+
+**During testing, please use production build version. DEV server is not consistent for testing**
+
+### To start server:
 
 ```bash
-yarn dev
+yarn build
+yarn start
 ```
 
-# The challenge:
+then open [http://localhost:3000](http://localhost:3000)
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+---
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+# The Task Content
 
 Create editable table component (Datasheet) using React from scratch (not using any external module such as react-data-grid, react-datasheet and etc.)
 

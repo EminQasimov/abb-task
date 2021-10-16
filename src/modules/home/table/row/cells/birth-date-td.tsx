@@ -1,5 +1,4 @@
 import { InlineForm, DatePicker } from "components"
-import { StringSchema } from "yup"
 import { readableDateFormat } from "utils"
 import moment from "moment"
 import { DateIcon } from "assets/icons"

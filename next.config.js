@@ -3,9 +3,10 @@ const path = require("path")
 /** @type {import('next').NextConfig} */
 module.exports = {
   reactStrictMode: true,
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+  // if you had eslint or ts errors, uncomment this to get build
+  // eslint: {
+  //   ignoreDuringBuilds: true,
+  // },
   // typescript: {
   //   ignoreBuildErrors: true,
   // },
