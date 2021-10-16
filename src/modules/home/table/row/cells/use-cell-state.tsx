@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react"
-import { InlineForm, Input } from "components"
 
 import { confirmDialog } from "primereact/confirmdialog"
 import useFetch from "hooks/use-fetch"
@@ -7,10 +6,16 @@ import useFetch from "hooks/use-fetch"
 import { StringSchema } from "yup"
 import { noop } from "types"
 
-export type HookProps = {}
+export type HookProps = {
+  initialValue: string
+  field: string
+  id: string
+  loadTable: noop
+  schema?: StringSchema
+}
 
 export default function useCellState(props: HookProps) {
-  const { initialValue, id, field, search = "", schema } = props
+  const { initialValue, id, field, schema, loadTable } = props
 
   const [value, setValue] = useState(() => initialValue ?? "")
   const [errors, setErrors] = useState([])
@@ -26,18 +31,18 @@ export default function useCellState(props: HookProps) {
       }),
     },
     onSuccess: () => {
-      props.loadTable()
+      loadTable()
     },
   })
 
-  function handleSubmit(closeCallback: noop) {
+  const handleSubmit = (closeCallback: noop) => {
     if (isValueNotChanged) {
       closeCallback()
       return
     }
 
     schema
-      .validate(value)
+      ?.validate(value)
       .then(() => {
         saveValue(closeCallback)
       })
@@ -46,7 +51,7 @@ export default function useCellState(props: HookProps) {
       })
   }
 
-  function handleCancel(closeCallback: noop) {
+  const handleCancel = (closeCallback: noop) => {
     if (isValueNotChanged) {
       closeCallback()
       return
@@ -79,8 +84,11 @@ export default function useCellState(props: HookProps) {
   }, [initialValue])
 
   return {
+    value,
+    setValue,
     handleCancel,
     handleSubmit,
     saveValue,
+    errors,
   }
 }

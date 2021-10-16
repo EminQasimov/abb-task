@@ -65,8 +65,8 @@ export const InlineForm = (props: InlineFormProps) => {
         <button
           role="button"
           className={styles.viewModeWrap}
-          onClick={() => setEdit(true)}
-          title="Click to edit"
+          onDoubleClick={() => setEdit(true)}
+          title="Double Click to edit"
         >
           {viewMode}
           <EditIcon fontSize={20} className={styles.editIcon} />

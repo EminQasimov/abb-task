@@ -1,7 +1,5 @@
-import moment from "moment"
-
 import { BirthDateTd, PhoneTd, SharedTd, DeleteTd } from "./cells"
-import { textSchema, phoneSchema } from "./validations"
+import { textSchema, phoneSchema, dateSchema } from "./validations"
 
 import styles from "../table.module.scss"
 
@@ -35,8 +33,9 @@ export const Row = (props: RowProps) => {
       <SharedTd field="surname" initialValue={surname} {...sharedProps} />
       <BirthDateTd
         field="birthDate"
-        initialValue={moment(birthDate)}
+        initialValue={birthDate}
         {...sharedProps}
+        schema={dateSchema}
       />
       <SharedTd field="position" initialValue={position} {...sharedProps} />
       <PhoneTd

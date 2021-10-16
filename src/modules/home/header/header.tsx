@@ -51,34 +51,43 @@ export default function Header(props: HeaderProps) {
   }
 
   return (
-    <div className={styles.homeHeader}>
-      <div className={styles.buttons}>
-        <span>Filters: </span>
-        <button
-          onClick={handleAllFilter}
-          className={filter === "all" ? styles.active : ""}
-        >
-          All employees
-        </button>
+    <>
+      <div className={styles.homeHeader}>
+        <div className={styles.buttons}>
+          <span>Filters: </span>
+          <button
+            onClick={handleAllFilter}
+            className={filter === "all" ? styles.active : ""}
+          >
+            All employees
+          </button>
 
-        <button
-          onClick={handleUpdatedFilter}
-          className={filter === "updated" ? styles.active : ""}
-        >
-          <strong className={styles.countBadge}>{updatedEmployeesCount}</strong>
-          Updated employees
-        </button>
+          <button
+            onClick={handleUpdatedFilter}
+            className={filter === "updated" ? styles.active : ""}
+          >
+            <strong className={styles.countBadge}>
+              {updatedEmployeesCount}
+            </strong>
+            Updated employees
+          </button>
 
-        <button
-          onClick={handleDeletedFilter}
-          className={filter === "deleted" ? styles.active : ""}
-        >
-          <strong className={styles.countBadge}>{deletedEmployeesCount}</strong>
-          Deleted employees
-        </button>
+          <button
+            onClick={handleDeletedFilter}
+            className={filter === "deleted" ? styles.active : ""}
+          >
+            <strong className={styles.countBadge}>
+              {deletedEmployeesCount}
+            </strong>
+            Deleted employees
+          </button>
+        </div>
+
+        <Search onSearch={handleSearch} initialValue={search} />
       </div>
-
-      <Search onSearch={handleSearch} initialValue={search} />
-    </div>
+      <p className={styles.note}>
+        <strong>Note: </strong> Double click to cells for editing
+      </p>
+    </>
   )
 }

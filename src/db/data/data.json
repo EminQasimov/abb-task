@@ -4,9 +4,17 @@
       "id": "rPQmC8qAta",
       "name": "İlham",
       "surname": "Xəlilov",
-      "birthDate": "2022-09-21T09:51:47+04:00",
-      "position": "Agento",
-      "phone": "(902)426-13-99"
+      "birthDate": "2021-01-02T09:51:47+04:00",
+      "position": "Agento sdf",
+      "phone": "(902)426-13-00"
+    },
+    "iANQ8xGUNN": {
+      "id": "iANQ8xGUNN",
+      "name": "ok0",
+      "surname": "Əyileva",
+      "birthDate": "2021-05-12T22:19:28+04:00",
+      "position": "Dire kmk ",
+      "phone": "(964)397-37-99"
     }
   },
   "deletedEmployees": [
@@ -24,9 +32,9 @@
       "id": "rPQmC8qAta",
       "name": "İlham",
       "surname": "Xəlilov",
-      "birthDate": "2022-09-21T09:51:47+04:00",
+      "birthDate": "2021-01-04T09:51:47+04:00",
       "position": "Agento sdf",
-      "phone": "(902)426-13-99"
+      "phone": "(902)426-13-00"
     },
     {
       "id": "jPFR-hd859",
@@ -40,9 +48,9 @@
       "id": "iANQ8xGUNN",
       "name": "ok0",
       "surname": "Əyileva",
-      "birthDate": "2021-05-09T18:19:28.212Z",
+      "birthDate": "2020-07-15T00:00:00+04:00",
       "position": "Dire kmk ",
-      "phone": "(964)397-37-42"
+      "phone": "(964)397-37-99"
     },
     {
       "id": "n_Fkd8c08l",

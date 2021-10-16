@@ -48,3 +48,4 @@ export const textSchema = yup
   .required("Please fill out this field.")
 
 export const phoneSchema = yup.string().isPhone("Please fill out this field.")
+export const dateSchema = yup.string().required("Please fill out this field.")

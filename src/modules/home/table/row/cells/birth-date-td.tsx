@@ -1,85 +1,21 @@
-import React, { useEffect, useState } from "react"
 import { InlineForm, DatePicker } from "components"
-
-import { confirmDialog } from "primereact/confirmdialog"
-import useFetch from "hooks/use-fetch"
-
 import { StringSchema } from "yup"
 import { readableDateFormat } from "utils"
-import { Moment } from "moment"
+import moment from "moment"
 import { DateIcon } from "assets/icons"
+import useCellState from "./use-cell-state"
+
+import { SharedProps } from "."
 
 import styles from "../../table.module.scss"
 
-export type SharedProps = {
-  initialValue: Moment
-  field: string
-  id: string
-  loadTable: () => void
-  schema: StringSchema
-}
-
 export const BirthDateTd = (props: SharedProps) => {
-  const { initialValue, id, field, schema } = props
-  const [value, setValue] = useState(() => initialValue)
-  const [errors, setErrors] = useState([])
-  const isValueNotChanged = value?.isSame(initialValue) ?? true
-  const formatedValue = initialValue.format(readableDateFormat)
-
-  const { refetch: saveValue } = useFetch({
-    url: `/api/employees/${id}`,
-    fetchOptions: {
-      method: "PATCH",
-      body: JSON.stringify({
-        [field]: value?.format(),
-      }),
-    },
-    queryEnabled: false,
-    onSuccess: () => {
-      props.loadTable()
-    },
+  const { initialValue } = props
+  const { value, setValue, handleSubmit, handleCancel, errors } = useCellState({
+    ...props,
+    initialValue: moment(initialValue).format(),
   })
-
-  function handleSubmit(closeCallback: () => void) {
-    if (isValueNotChanged) {
-      closeCallback()
-      return
-    }
-
-    saveValue(closeCallback)
-  }
-
-  function handleCancel(closeCallback: () => void) {
-    if (isValueNotChanged) {
-      closeCallback()
-      return
-    }
-
-    confirmDialog({
-      message: (
-        <div>
-          Are you sure you want to proceed without <br />
-          saving <strong>{formatedValue}</strong> ?
-        </div>
-      ),
-      header: "Confirmation",
-      icon: "pi pi-info-circle",
-      position: "top",
-      rejectLabel: "No, cancel changes",
-      acceptLabel: "Yes, save my changes",
-      reject: () => {
-        closeCallback()
-        setValue(initialValue)
-      },
-      accept: () => {
-        handleSubmit(closeCallback)
-      },
-    })
-  }
-
-  useEffect(() => {
-    setValue(initialValue)
-  }, [initialValue])
+  const formatedValue = moment(value).format(readableDateFormat)
 
   return (
     <td>
@@ -92,8 +28,8 @@ export const BirthDateTd = (props: SharedProps) => {
         }
         renderEditMode={() => (
           <DatePicker
-            value={value}
-            onChange={(value) => setValue(value)}
+            value={moment(value)}
+            onChange={(value) => setValue(value ? value.format() : "")}
             errors={errors}
           />
         )}

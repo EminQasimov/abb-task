@@ -21,6 +21,7 @@
 .errorMessage {
   position: absolute;
   top: 46px;
+  z-index: 99;
   max-width: 360px;
   min-width: 200px;
   background: #dc2626;
@@ -32,7 +33,7 @@
   display: flex;
   align-items: center;
   font: inherit;
-  font-size: 14px;
+  font-size: 12px;
 
   span {
     margin-right: 6px;
