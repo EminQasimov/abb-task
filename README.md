@@ -59,3 +59,11 @@ As a user I want:
 - Some basic validations (date, phone number validation etc.)
 - ✅ SSR support
 - ✅ Pagination
+
+# My notes
+
+- State persisted on nextjs server local filesystem
+- UI and icons
+- real case simulation - fetching, pagination, loading
+- Normalize data types - use flat objects
+- tree shake moment

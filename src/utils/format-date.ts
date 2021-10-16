@@ -1,19 +1,18 @@
-import format from "date-fns/format"
-import parseISO from "date-fns/parseISO"
+import moment from "moment"
 
-const readableDateFormat = "MMM d, yyyy"
+export const readableDateFormat = "MMM D, YYYY"
 
 export function formatDate(date: string) {
   let readableDate = date
-  // console.log(date)
+  console.log(date)
 
   try {
-    readableDate = format(parseISO(date), readableDateFormat)
+    readableDate = moment(date).format(readableDateFormat)
   } catch (error) {
     console.log("wrong date format")
   }
 
-  // console.log(readableDate)
+  console.log(readableDate)
 
   return readableDate
 }

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
-import { InputText } from "primereact/inputtext"
 import { InlineForm } from "components/inline-form"
+import { Input } from "components/input"
+
 import Highlighter from "react-highlight-words"
 import { confirmDialog } from "primereact/confirmdialog"
 import useFetch from "hooks/use-fetch"
@@ -83,13 +84,14 @@ export const SharedTd = (props: SharedProps) => {
             autoEscape
           />
         }
-        editMode={
-          <InputText
+        renderEditMode={(closer) => (
+          <Input
             value={value}
-            autoFocus
             onChange={(e) => setValue(e.target.value)}
+            onBlur={() => handleCancel(closer)}
+            autoFocus
           />
-        }
+        )}
         onSubmit={handleSubmit}
         onCancel={handleCancel}
       />

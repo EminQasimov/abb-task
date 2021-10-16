@@ -1,8 +1,10 @@
 import React from "react"
-import { Calendar } from "primereact/calendar"
+// import { Calendar } from "primereact/calendar"
 import { InlineForm } from "components/inline-form"
 import { formatDate } from "utils"
 import { DateIcon } from "assets/icons"
+import { DatePicker } from "components/date-picker"
+
 import styles from "../../table.module.scss"
 
 export const BirthDateTd = (props: { birthDate: string }) => {
@@ -13,11 +15,13 @@ export const BirthDateTd = (props: { birthDate: string }) => {
       <InlineForm
         viewMode={
           <div className={styles.cellViewMode}>
-            <DateIcon fontSize={22} />
+            <DateIcon fontSize={20} />
             {formatDate(birthDate)}
           </div>
         }
-        editMode={<Calendar visible={true} showIcon={false} showOnFocus />}
+        renderEditMode={() => <DatePicker />}
+        onSubmit={() => {}}
+        onCancel={() => {}}
       />
     </td>
   )

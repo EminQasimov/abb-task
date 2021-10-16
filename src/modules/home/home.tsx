@@ -14,6 +14,8 @@ import { PaginatorPageState } from "primereact/paginator"
 export type PageProps = {
   employees: Employee[]
   totalEmployeesCount: number
+  deletedEmployeesCount: number
+  updatedEmployeesCount: number
 }
 
 export type HomeState = {
@@ -55,6 +57,12 @@ const Home = (props: PageProps) => {
   })
 
   let tableContent = null
+  const {
+    employees,
+    deletedEmployeesCount,
+    updatedEmployeesCount,
+    totalEmployeesCount,
+  } = data || {}
 
   if (error && !isLoading) {
     tableContent = (
@@ -66,8 +74,8 @@ const Home = (props: PageProps) => {
     )
   } else if (isLoading) {
     tableContent = <TableSkeletonLoader rowCount={10} cellCount={7} />
-  } else if (data?.employees) {
-    tableContent = data.employees.map((employee: Employee) => (
+  } else if (employees) {
+    tableContent = employees.map((employee: Employee) => (
       <Row
         key={employee.id}
         employee={employee}
@@ -112,14 +120,14 @@ const Home = (props: PageProps) => {
           setState,
           filter,
           search,
-          deletedEmployeesCount: data.deletedEmployeesCount,
-          updatedEmployeesCount: data.updatedEmployeesCount,
+          deletedEmployeesCount,
+          updatedEmployeesCount,
         }}
       />
       <Table>{tableContent}</Table>
       <Footer
         {...{
-          totalEmployeesCount: data.totalEmployeesCount,
+          totalEmployeesCount,
           currentPage,
           onPageChange,
           refetch,

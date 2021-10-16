@@ -17,7 +17,9 @@ export const PhoneTd = (props: { phone: string }) => {
             {phone}
           </div>
         }
-        editMode={<InputText value={phone} autoFocus />}
+        renderEditMode={() => <InputText value={phone} autoFocus />}
+        onSubmit={() => {}}
+        onCancel={() => {}}
       />
     </td>
   )

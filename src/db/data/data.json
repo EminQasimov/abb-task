@@ -1,140 +1,12 @@
 {
   "employees": [
     {
-      "id": "S_i7oRWSCs",
-      "name": "Ofelya",
-      "surname": "Seyidov",
-      "birthDate": "2020-11-18T21:24:42.931Z",
-      "position": "Officer",
-      "phone": "(937)485-92-46"
-    },
-    {
-      "id": "ro21UThJnL",
-      "name": "Kübra",
-      "surname": "Ələkbərii",
-      "birthDate": "2021-08-19T11:53:24.809Z",
-      "position": "Consultant",
-      "phone": "(971)762-99-72"
-    },
-    {
-      "id": "A7KQDY5h-E",
-      "name": "İlqar",
-      "surname": "Vəliyev",
-      "birthDate": "2021-02-13T06:58:54.377Z",
-      "position": "Supervisor",
-      "phone": "(901)171-15-10"
-    },
-    {
-      "id": "pPeKEz_QEk",
-      "name": "Nurlan",
-      "surname": "Quliyev",
-      "birthDate": "2021-09-04T03:42:26.621Z",
-      "position": "Specialist",
-      "phone": "(982)339-21-06"
-    },
-    {
-      "id": "RBoCbXtDaF",
-      "name": "Adil",
-      "surname": "Xəlilov",
-      "birthDate": "2021-09-25T10:42:25.653Z",
-      "position": "Facilitator",
-      "phone": "(920)514-77-42"
-    },
-    {
-      "id": "yAzWODpDbZ",
-      "name": "Nadir",
-      "surname": "Xəlilov",
-      "birthDate": "2021-01-19T20:41:19.924Z",
-      "position": "Facilitator",
-      "phone": "(902)936-67-57"
-    },
-    {
-      "id": "i1DmLP10Lg",
-      "name": "Emin",
-      "surname": "Nəzərov",
-      "birthDate": "2021-03-20T03:39:18.528Z",
-      "position": "Associate",
-      "phone": "(916)703-26-29"
-    },
-    {
-      "id": "ButR0cIJVV",
-      "name": "Kamran",
-      "surname": "Əliyev",
-      "birthDate": "2021-03-02T08:56:35.117Z",
-      "position": "Analyst",
-      "phone": "(926)994-83-45"
-    },
-    {
-      "id": "Fc5zFMyWN8",
-      "name": "Gülsüm",
-      "surname": "Soltanova",
-      "birthDate": "2021-08-17T11:58:20.898Z",
-      "position": "Orchestrator",
-      "phone": "(909)550-29-80"
-    },
-    {
-      "id": "2hyyHWl9HC",
-      "name": "Bəhruz",
-      "surname": "Nəzərov",
-      "birthDate": "2020-12-16T13:28:22.566Z",
-      "position": "Liaison",
-      "phone": "(987)716-58-67"
-    },
-    {
-      "id": "MeiPyc2cBh",
-      "name": "Zaur",
-      "surname": "Quliyev",
-      "birthDate": "2021-03-14T12:38:51.315Z",
-      "position": "Agent",
-      "phone": "(982)778-74-69"
-    },
-    {
-      "id": "x566yF15vm",
-      "name": "Humay",
-      "surname": "Ələkbərova",
-      "birthDate": "2020-10-16T17:29:45.606Z",
-      "position": "Engineer",
-      "phone": "(926)613-77-31"
-    },
-    {
-      "id": "AYo6b07f6Q",
-      "name": "Faiq",
-      "surname": "Xəlilov",
-      "birthDate": "2021-01-29T22:16:03.293Z",
-      "position": "Facilitator",
-      "phone": "(984)868-97-38"
-    },
-    {
-      "id": "b8egoJFytU",
-      "name": "Nurlan",
-      "surname": "Quliyev",
-      "birthDate": "2021-07-10T07:25:17.527Z",
-      "position": "Coordinator",
-      "phone": "(914)207-98-27"
-    },
-    {
-      "id": "_DeVTEJiqb",
-      "name": "Jasmin",
-      "surname": "Qasımova",
-      "birthDate": "2021-01-14T19:32:23.407Z",
-      "position": "Orchestrator",
-      "phone": "(955)755-99-95"
-    },
-    {
       "id": "HgD83bYgFB",
-      "name": "Aqil",
+      "name": "Aqila",
       "surname": "Əliyev",
       "birthDate": "2021-04-05T20:58:44.530Z",
       "position": "Liaison",
       "phone": "(997)138-87-81"
-    },
-    {
-      "id": "jDR5yEB87E",
-      "name": "Aygül",
-      "surname": "Rəşidova",
-      "birthDate": "2021-04-19T08:49:31.520Z",
-      "position": "Producer",
-      "phone": "(946)733-48-57"
     },
     {
       "id": "jPFR-hd859",
@@ -162,7 +34,7 @@
     },
     {
       "id": "n_Fkd8c08l",
-      "name": "Emil",
+      "name": "Emilasdqw",
       "surname": "Quliyev",
       "birthDate": "2021-09-17T02:52:47.275Z",
       "position": "Executive",
@@ -207,14 +79,6 @@
       "birthDate": "2020-12-13T17:37:55.468Z",
       "position": "Assistant",
       "phone": "(989)821-72-58"
-    },
-    {
-      "id": "hEXGIWU7gF",
-      "name": "Ülkər",
-      "surname": "Seyidova",
-      "birthDate": "2020-12-30T23:01:24.088Z",
-      "position": "Director",
-      "phone": "(923)067-32-06"
     },
     {
       "id": "jSAqzW_txt",
@@ -399,8 +263,162 @@
       "birthDate": "2021-01-10T18:26:35.111Z",
       "position": "Agent",
       "phone": "(929)552-01-68"
+    },
+    {
+      "id": "x566yF15vm",
+      "name": "Humay",
+      "surname": "Ələkbərova",
+      "birthDate": "2020-10-16T17:29:45.606Z",
+      "position": "Engineer",
+      "phone": "(926)613-77-31"
+    },
+    {
+      "id": "MeiPyc2cBh",
+      "name": "Zaur",
+      "surname": "Quliyev",
+      "birthDate": "2021-03-14T12:38:51.315Z",
+      "position": "Agent",
+      "phone": "(982)778-74-69"
+    },
+    {
+      "id": "2hyyHWl9HC",
+      "name": "Bəhruz",
+      "surname": "Nəzərov",
+      "birthDate": "2020-12-16T13:28:22.566Z",
+      "position": "Liaison",
+      "phone": "(987)716-58-67"
+    },
+    {
+      "id": "Fc5zFMyWN8",
+      "name": "Gülsüm",
+      "surname": "Soltanova",
+      "birthDate": "2021-08-17T11:58:20.898Z",
+      "position": "Orchestrator",
+      "phone": "(909)550-29-80"
+    },
+    {
+      "id": "ButR0cIJVV",
+      "name": "Kamran",
+      "surname": "Əliyev",
+      "birthDate": "2021-03-02T08:56:35.117Z",
+      "position": "Analyst",
+      "phone": "(926)994-83-45"
+    },
+    {
+      "id": "i1DmLP10Lg",
+      "name": "Emin",
+      "surname": "Nəzərov",
+      "birthDate": "2021-03-20T03:39:18.528Z",
+      "position": "Associate",
+      "phone": "(916)703-26-29"
+    },
+    {
+      "id": "hEXGIWU7gF",
+      "name": "Ülkər",
+      "surname": "Seyidova",
+      "birthDate": "2020-12-30T23:01:24.088Z",
+      "position": "Director",
+      "phone": "(923)067-32-06"
+    },
+    {
+      "id": "yAzWODpDbZ",
+      "name": "Nadir",
+      "surname": "Xəlilov",
+      "birthDate": "2021-01-19T20:41:19.924Z",
+      "position": "Facilitator",
+      "phone": "(902)936-67-57"
+    },
+    {
+      "id": "RBoCbXtDaF",
+      "name": "Adil",
+      "surname": "Xəlilov",
+      "birthDate": "2021-09-25T10:42:25.653Z",
+      "position": "Facilitator",
+      "phone": "(920)514-77-42"
+    },
+    {
+      "id": "pPeKEz_QEk",
+      "name": "Nurlan",
+      "surname": "Quliyev",
+      "birthDate": "2021-09-04T03:42:26.621Z",
+      "position": "Specialist",
+      "phone": "(982)339-21-06"
+    },
+    {
+      "id": "A7KQDY5h-E",
+      "name": "İlqar",
+      "surname": "Vəliyev",
+      "birthDate": "2021-02-13T06:58:54.377Z",
+      "position": "Supervisor",
+      "phone": "(901)171-15-10"
+    },
+    {
+      "id": "ro21UThJnL",
+      "name": "Kübra",
+      "surname": "Ələkbərii",
+      "birthDate": "2021-08-19T11:53:24.809Z",
+      "position": "Consultant",
+      "phone": "(971)762-99-72"
+    },
+    {
+      "id": "S_i7oRWSCs",
+      "name": "Ofelya",
+      "surname": "Seyidov",
+      "birthDate": "2020-11-18T21:24:42.931Z",
+      "position": "Officer",
+      "phone": "(937)485-92-46"
     }
   ],
-  "initialEmployees": {},
-  "deletedEmployees": []
+  "initialEmployees": {
+    "HgD83bYgFB": {
+      "id": "HgD83bYgFB",
+      "name": "Aqil",
+      "surname": "Əliyev",
+      "birthDate": "2021-04-05T20:58:44.530Z",
+      "position": "Liaison",
+      "phone": "(997)138-87-81"
+    },
+    "n_Fkd8c08l": {
+      "id": "n_Fkd8c08l",
+      "name": "Emilasd",
+      "surname": "Quliyev",
+      "birthDate": "2021-09-17T02:52:47.275Z",
+      "position": "Executive",
+      "phone": "(905)277-35-75"
+    }
+  },
+  "deletedEmployees": [
+    {
+      "id": "jDR5yEB87E",
+      "name": "Aygül",
+      "surname": "Rəşidova",
+      "birthDate": "2021-04-19T08:49:31.520Z",
+      "position": "Producer",
+      "phone": "(946)733-48-57"
+    },
+    {
+      "id": "_DeVTEJiqb",
+      "name": "Jasmin",
+      "surname": "Qasımova",
+      "birthDate": "2021-01-14T19:32:23.407Z",
+      "position": "Orchestrator",
+      "phone": "(955)755-99-95"
+    },
+    {
+      "id": "b8egoJFytU",
+      "name": "Nurlan",
+      "surname": "Quliyev",
+      "birthDate": "2021-07-10T07:25:17.527Z",
+      "position": "Coordinator",
+      "phone": "(914)207-98-27"
+    },
+    {
+      "id": "AYo6b07f6Q",
+      "name": "Faiq",
+      "surname": "Xəlilov",
+      "birthDate": "2021-01-29T22:16:03.293Z",
+      "position": "Facilitator",
+      "phone": "(984)868-97-38"
+    }
+  ]
 }

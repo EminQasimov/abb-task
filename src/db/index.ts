@@ -1,7 +1,7 @@
 export * from "./handlers"
 import fs from "fs"
 import path from "path"
-import data from "./db.json"
+import data from "./data/data.json"
 
 import { Employee } from "types/employee"
 
@@ -17,7 +17,7 @@ export function saveDb() {
     initialEmployees,
     deletedEmployees,
   }
-  const url = path.resolve(process.cwd(), "./src/db/db.json")
+  const url = path.resolve(process.cwd(), "./src/db/data/data.json")
 
   fs.writeFileSync(url, JSON.stringify(storedData, null, 2))
   console.log("DB saved into " + url)

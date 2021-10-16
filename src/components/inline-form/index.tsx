@@ -1,19 +1,25 @@
 import { useState, useRef, ReactChild } from "react"
 import useOnClickOutside from "hooks/use-outside-click"
-import { CancelIcon, CheckIcon } from "assets/icons"
+import { CancelIcon, CheckIcon, EditIcon } from "assets/icons"
 
 import styles from "./inline-form.module.scss"
 
 type InlineFormProps = {
   viewMode: ReactChild
-  editMode: ReactChild
+  renderEditMode: (close: () => void) => ReactChild
   onSubmit: (close: () => void) => void
   onCancel: (close: () => void) => void
   disabled?: boolean
 }
 
 export const InlineForm = (props: InlineFormProps) => {
-  const { editMode, viewMode, onSubmit, onCancel, disabled = false } = props
+  const {
+    renderEditMode,
+    viewMode,
+    onSubmit,
+    onCancel,
+    disabled = false,
+  } = props
   const [isEdit, setEdit] = useState(false)
   const ref = useRef<HTMLFormElement>(null)
 
@@ -34,7 +40,7 @@ export const InlineForm = (props: InlineFormProps) => {
       }}
       className={styles.form}
     >
-      <div className={styles.editWrap}>{editMode}</div>
+      <div className={styles.editWrap}>{renderEditMode(closeCallback)}</div>
       <div className={styles.formButtons}>
         <button
           aria-label="save editing"
@@ -58,11 +64,18 @@ export const InlineForm = (props: InlineFormProps) => {
   useOnClickOutside(ref, cancelEditing)
 
   return (
-    <div>
+    <div className={styles.content}>
       {isEdit && !disabled ? (
         form
       ) : (
-        <div onClick={() => setEdit(true)}>{viewMode}</div>
+        <button
+          role="button"
+          className={styles.viewModeWrap}
+          onClick={() => setEdit(true)}
+        >
+          {viewMode}
+          <EditIcon fontSize={20} className={styles.editIcon} />
+        </button>
       )}
     </div>
   )
