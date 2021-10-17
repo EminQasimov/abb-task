@@ -1,8 +1,8 @@
-import React, { InputHTMLAttributes } from "react"
-import MaskInput from "react-maskinput"
-import { ErrorIcon } from "assets/icons"
+import React, { InputHTMLAttributes } from 'react'
+import MaskInput from 'react-maskinput'
+import { ErrorIcon } from 'assets/icons'
 
-import styles from "./inputs.module.scss"
+import styles from './inputs.module.scss'
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   errors?: string[]
@@ -31,7 +31,7 @@ export function Input(props: InputProps) {
     <div>
       <input
         className={`${className} ${styles.input} ${
-          isErrorHas ? styles.errored : ""
+          isErrorHas ? styles.errored : ''
         }`}
         spellCheck={false}
         {...rest}
@@ -49,10 +49,10 @@ export function MaskedInput(props: InputProps) {
     <div>
       {/* @ts-ignore */}
       <MaskInput
-        mask={"(000)000-00-00"}
+        mask={'(000)000-00-00'}
         showMask
         maskChar="_"
-        className={`${styles.input} ${isErrorHas ? styles.errored : ""}`}
+        className={`${styles.input} ${isErrorHas ? styles.errored : ''}`}
         {...rest}
       />
       <ErrorMessage errors={errors} />

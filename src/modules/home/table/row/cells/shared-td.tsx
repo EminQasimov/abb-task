@@ -1,9 +1,9 @@
-import { InlineForm, Input } from "components"
-import Highlighter from "react-highlight-words"
-import useCellState from "./use-cell-state"
+import { InlineForm, Input } from 'components'
+import Highlighter from 'react-highlight-words'
+import useCellState from './use-cell-state'
 
-import { StringSchema } from "yup"
-import { noop } from "types"
+import { StringSchema } from 'yup'
+import { noop } from 'types'
 
 export type SharedProps = {
   initialValue: string
@@ -15,7 +15,7 @@ export type SharedProps = {
 }
 
 export const SharedTd = (props: SharedProps) => {
-  const { search = "" } = props
+  const { search = '' } = props
 
   const { value, setValue, handleSubmit, handleCancel, errors } =
     useCellState(props)
@@ -25,7 +25,7 @@ export const SharedTd = (props: SharedProps) => {
       <InlineForm
         viewMode={
           <Highlighter
-            searchWords={search.split("")}
+            searchWords={search.split('')}
             textToHighlight={value}
             autoEscape
           />

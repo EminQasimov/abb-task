@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from "react"
-import { useRouter } from "next/router"
+import React, { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
 
-import Header from "./header/header"
-import { Table, Row, TableSkeletonLoader, EmptyLayout } from "./table"
-import Footer from "./footer/footer"
+import Header from './header/header'
+import { Table, Row, TableSkeletonLoader, EmptyLayout } from './table'
+import Footer from './footer/footer'
 
-import useFetch from "hooks/use-fetch"
-import { changeUrlParamsSilently, removeEmptyValues } from "utils"
+import useFetch from 'hooks/use-fetch'
+import { changeUrlParamsSilently, removeEmptyValues } from 'utils'
 
-import { Employee } from "types"
-import { PaginatorPageState } from "primereact/paginator"
-import { LIMIT } from "configs"
+import { Employee } from 'types'
+import { PaginatorPageState } from 'primereact/paginator'
+import { LIMIT } from 'configs'
 
 export type PageProps = {
   employees: Employee[]
@@ -37,20 +37,20 @@ const Home = (props: PageProps) => {
     return {
       queryEnabled: false,
       page,
-      search: router.query.search ? String(router.query.search) : "",
-      filter: router.query.filter ? String(router.query.filter) : "all",
+      search: router.query.search ? String(router.query.search) : '',
+      filter: router.query.filter ? String(router.query.filter) : 'all',
     }
   })
 
   const { queryEnabled, page, search, filter } = state
 
   // don't show empty values in url bar
-  let params = removeEmptyValues({
+  const params = removeEmptyValues({
     page,
     search,
     filter,
   })
-  let searchParams = new URLSearchParams(params)
+  const searchParams = new URLSearchParams(params)
 
   const { data, isLoading, error, refetch } = useFetch({
     url: `/api/employees?${searchParams}`,
@@ -83,7 +83,7 @@ const Home = (props: PageProps) => {
         employee={employee}
         search={search}
         loadTable={refetch}
-        deleted={filter === "deleted"}
+        deleted={filter === 'deleted'}
       />
     ))
   } else {
@@ -96,7 +96,7 @@ const Home = (props: PageProps) => {
   }
 
   function handleSearch(search: string) {
-    changeUrlParamsSilently("search", search)
+    changeUrlParamsSilently('search', search)
 
     setState((prev) => ({
       ...prev,
@@ -117,8 +117,8 @@ const Home = (props: PageProps) => {
   }
 
   useEffect(() => {
-    changeUrlParamsSilently("page", String(page))
-    changeUrlParamsSilently("filter", filter as string)
+    changeUrlParamsSilently('page', String(page))
+    changeUrlParamsSilently('filter', filter as string)
   }, [page, filter])
 
   return (

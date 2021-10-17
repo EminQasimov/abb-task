@@ -1,6 +1,6 @@
-import { NextApiRequest, NextApiResponse } from "next"
-import { sleep } from "utils"
-import * as db from "db"
+import { NextApiRequest, NextApiResponse } from 'next'
+import { sleep } from 'utils'
+import * as db from 'db'
 
 // api/employees
 export default async function getAllEmployees(
@@ -11,15 +11,18 @@ export default async function getAllEmployees(
   await sleep(600)
 
   switch (req.method) {
-    case "GET":
+    case 'GET': {
       const data = db.getEmployees({ page, limit, search, filter })
       res.status(200).json(data)
       break
-    case "POST":
+    }
+    case 'POST': {
       db.resetEmployees()
       res.status(200).json({})
       break
-    default:
+    }
+    default: {
       res.status(405).end(`Method ${req.method} Not Allowed`)
+    }
   }
 }

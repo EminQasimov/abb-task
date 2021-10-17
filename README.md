@@ -2,6 +2,9 @@
 
 ![logo](./public/abb-logo.png)
 
+[![image.png](https://i.postimg.cc/sD487gpd/image.png)](https://postimg.cc/gnrNPdSN)
+[![image.png](https://i.postimg.cc/zBTpNx7Z/image.png)](https://postimg.cc/47NpbbjB)
+
 # My notes
 
 This is a `Next.js` project bootstrapped with `create-next-app` and `TypeScript` setup.

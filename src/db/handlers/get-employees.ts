@@ -1,7 +1,7 @@
-import { LIMIT } from "configs"
-import { deletedEmployees, employees, getUpdatedEmployees } from "db"
-import { matchSorter } from "match-sorter"
-import { Employee } from "types"
+import { LIMIT } from 'configs'
+import { deletedEmployees, employees, getUpdatedEmployees } from 'db'
+import { matchSorter } from 'match-sorter'
+import { Employee } from 'types'
 
 // page numbers start with 1
 function paginate(array: Employee[], limit: number, page: number) {
@@ -18,15 +18,15 @@ type QueryParams = {
 export function getEmployees(params: QueryParams) {
   const { page, limit, search, filter } = params
 
-  let currentPage = Number(page) || 1
-  let limitCount = Number(limit) || LIMIT
+  const currentPage = Number(page) || 1
+  const limitCount = Number(limit) || LIMIT
   let totalEmployeesCount = 0
 
   let filteredEmployees: Employee[] = []
 
-  if (filter === "deleted") {
+  if (filter === 'deleted') {
     filteredEmployees = [...deletedEmployees]
-  } else if (filter === "updated") {
+  } else if (filter === 'updated') {
     filteredEmployees = getUpdatedEmployees()
   } else {
     filteredEmployees = [...employees]
@@ -34,7 +34,7 @@ export function getEmployees(params: QueryParams) {
 
   if (search) {
     filteredEmployees = matchSorter(filteredEmployees, search, {
-      keys: ["name", "surname", "position"],
+      keys: ['name', 'surname', 'position'],
     })
   }
 

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react"
+import { useCallback, useEffect, useState } from 'react'
 
 type HookProps = {
   queryEnabled?: boolean
@@ -39,7 +39,7 @@ export default function useFetch(props: HookProps) {
 
   const { isLoading, isError, error, data } = state
 
-  function update(args: Object) {
+  function update(args: Record<string, unknown>) {
     setState((prev) => ({
       ...prev,
       ...args,
@@ -50,6 +50,7 @@ export default function useFetch(props: HookProps) {
     async (onDone?: () => void) => {
       update({
         isLoading: true,
+        data: [],
       })
 
       try {
@@ -68,19 +69,20 @@ export default function useFetch(props: HookProps) {
           isLoading: false,
           isError: true,
           error,
+          data: [],
         })
       } finally {
         onDone?.()
       }
     },
-    [url, queryEnabled, fetchOptions]
+    [url, fetchOptions, onSuccess]
   )
 
   useEffect(() => {
     if (!queryEnabled) return
 
     refetch()
-  }, [url, queryEnabled])
+  }, [url, queryEnabled, refetch])
 
   return {
     isLoading,

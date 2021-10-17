@@ -1,5 +1,5 @@
-import React, { ReactChild } from "react"
-import styles from "./table.module.scss"
+import React, { ReactChild } from 'react'
+import styles from './table.module.scss'
 
 type TableProps = {
   children: ReactChild

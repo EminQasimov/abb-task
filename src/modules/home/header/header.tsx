@@ -1,8 +1,8 @@
-import React from "react"
-import { HomeState } from "../home"
-import Search from "./search"
+import React from 'react'
+import { HomeState } from '../home'
+import Search from './search'
 
-import styles from "./header.module.scss"
+import styles from './header.module.scss'
 
 type HeaderProps = {
   handleSearch: (search: string) => void
@@ -34,19 +34,19 @@ export default function Header(props: HeaderProps) {
 
   function handleAllFilter() {
     update({
-      filter: "all",
+      filter: 'all',
     })
   }
 
   function handleUpdatedFilter() {
     update({
-      filter: "updated",
+      filter: 'updated',
     })
   }
 
   function handleDeletedFilter() {
     update({
-      filter: "deleted",
+      filter: 'deleted',
     })
   }
 
@@ -57,14 +57,14 @@ export default function Header(props: HeaderProps) {
           <span>Filters: </span>
           <button
             onClick={handleAllFilter}
-            className={filter === "all" ? styles.active : ""}
+            className={filter === 'all' ? styles.active : ''}
           >
             All employees
           </button>
 
           <button
             onClick={handleUpdatedFilter}
-            className={filter === "updated" ? styles.active : ""}
+            className={filter === 'updated' ? styles.active : ''}
           >
             <strong className={styles.countBadge}>
               {updatedEmployeesCount}
@@ -74,7 +74,7 @@ export default function Header(props: HeaderProps) {
 
           <button
             onClick={handleDeletedFilter}
-            className={filter === "deleted" ? styles.active : ""}
+            className={filter === 'deleted' ? styles.active : ''}
           >
             <strong className={styles.countBadge}>
               {deletedEmployeesCount}

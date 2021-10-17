@@ -1,9 +1,9 @@
-import React, { useState } from "react"
-import { Paginator, PaginatorPageState } from "primereact/paginator"
-import { Dialog } from "primereact/dialog"
-import { LIMIT } from "configs"
+import React, { useState } from 'react'
+import { Paginator, PaginatorPageState } from 'primereact/paginator'
+import { Dialog } from 'primereact/dialog'
+import { LIMIT } from 'configs'
 
-import styles from "./footer.module.scss"
+import styles from './footer.module.scss'
 
 type FooterProps = {
   totalEmployeesCount: number
@@ -17,8 +17,8 @@ export default function Footer(props: FooterProps) {
   const [submitData, setSubmitData] = useState(null)
 
   function handleReset() {
-    fetch("/api/employees", {
-      method: "POST",
+    fetch('/api/employees', {
+      method: 'POST',
     }).then(() => {
       refetch()
     })
@@ -26,7 +26,7 @@ export default function Footer(props: FooterProps) {
 
   // get updated and deleted employees list for view as json
   function handleSubmit() {
-    fetch("/api/employees/submit")
+    fetch('/api/employees/submit')
       .then((res) => res.json())
       .then((data) => {
         setSubmitData(data)

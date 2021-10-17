@@ -1,8 +1,8 @@
-import { CancelIcon, SearchIcon } from "assets/icons"
-import { Input } from "components"
-import { useState } from "react"
+import { CancelIcon, SearchIcon } from 'assets/icons'
+import { Input } from 'components'
+import { useState } from 'react'
 
-import styles from "./header.module.scss"
+import styles from './header.module.scss'
 
 interface SearchProps {
   onSearch: (search: string) => void
@@ -31,8 +31,8 @@ export default function Search(props: SearchProps) {
         type="button"
         onClick={() => {
           if (value) {
-            setValue("")
-            onSearch("")
+            setValue('')
+            onSearch('')
           }
         }}
       >

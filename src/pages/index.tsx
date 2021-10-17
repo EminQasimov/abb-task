@@ -1,11 +1,11 @@
-import HomeModule, { PageProps } from "modules/home/home"
-import * as db from "db"
+import HomeModule, { PageProps } from 'modules/home/home'
+import * as db from 'db'
 
-import { GetServerSideProps } from "next"
+import { GetServerSideProps } from 'next'
 
-import "primereact/resources/themes/saga-blue/theme.css"
-import "primereact/resources/primereact.min.css"
-import "primeicons/primeicons.css"
+import 'primereact/resources/themes/saga-blue/theme.css'
+import 'primereact/resources/primereact.min.css'
+import 'primeicons/primeicons.css'
 
 export default function Home(props: PageProps) {
   return <HomeModule {...props} />

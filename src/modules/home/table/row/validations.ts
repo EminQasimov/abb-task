@@ -1,5 +1,5 @@
 // @ts-nocheck
-import * as yup from "yup"
+import * as yup from 'yup'
 
 // non letter symbols regex that user can type on keyboard.
 const nonLetterSymbols = /[0-9]|[,~!@#$%^&*()_+{}|":>?<.';/`\]\[=-]|\\/g
@@ -8,7 +8,7 @@ const nonLetterSymbols = /[0-9]|[,~!@#$%^&*()_+{}|":>?<.';/`\]\[=-]|\\/g
 const invalidPhone = /_/g
 
 function isAlpha(message: string) {
-  return this.test("isAlpha", message, function (value: string) {
+  return this.test('isAlpha', message, function (value: string) {
     const { path, createError } = this
 
     if (value.match(nonLetterSymbols)) {
@@ -23,7 +23,7 @@ function isAlpha(message: string) {
 }
 
 function isPhone(message: string) {
-  return this.test("isPhone", message, function (value: string) {
+  return this.test('isPhone', message, function (value: string) {
     const { path, createError } = this
 
     if (value.match(invalidPhone)) {
@@ -37,15 +37,15 @@ function isPhone(message: string) {
   })
 }
 
-yup.addMethod(yup.string, "isAlpha", isAlpha)
-yup.addMethod(yup.string, "isPhone", isPhone)
+yup.addMethod(yup.string, 'isAlpha', isAlpha)
+yup.addMethod(yup.string, 'isPhone', isPhone)
 
 export const textSchema = yup
   .string()
-  .min(3, "A minimum of 3 characters is required.")
-  .max(40, "Maximum allowed characters is 40.")
-  .isAlpha("Field must contain only letters")
-  .required("Please fill out this field.")
+  .min(3, 'A minimum of 3 characters is required.')
+  .max(40, 'Maximum allowed characters is 40.')
+  .isAlpha('Field must contain only letters')
+  .required('Please fill out this field.')
 
-export const phoneSchema = yup.string().isPhone("Please fill out this field.")
-export const dateSchema = yup.string().required("Please fill out this field.")
+export const phoneSchema = yup.string().isPhone('Please fill out this field.')
+export const dateSchema = yup.string().required('Please fill out this field.')

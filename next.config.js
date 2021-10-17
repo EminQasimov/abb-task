@@ -1,5 +1,3 @@
-const path = require("path")
-
 /** @type {import('next').NextConfig} */
 module.exports = {
   reactStrictMode: true,
@@ -14,7 +12,7 @@ module.exports = {
     if (options.dev) {
       config.watchOptions = {
         ...config.watchOptions,
-        ignored: [...config.watchOptions.ignored, "**/src/db/data/**"],
+        ignored: [...config.watchOptions.ignored, '**/src/db/data/**'],
       }
     }
     return config

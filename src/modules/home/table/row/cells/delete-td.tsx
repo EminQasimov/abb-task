@@ -1,6 +1,6 @@
-import React from "react"
-import styles from "../../table.module.scss"
-import useFetch from "hooks/use-fetch"
+import React from 'react'
+import styles from '../../table.module.scss'
+import useFetch from 'hooks/use-fetch'
 
 type DeleteTdProps = {
   deleted: boolean
@@ -14,7 +14,7 @@ export const DeleteTd = (props: DeleteTdProps) => {
   const { refetch: removeEmployee } = useFetch({
     url: `/api/employees/${id}`,
     fetchOptions: {
-      method: "DELETE",
+      method: 'DELETE',
     },
     onSuccess: () => {
       loadTable()
@@ -24,7 +24,7 @@ export const DeleteTd = (props: DeleteTdProps) => {
   const { refetch: undoEmployee } = useFetch({
     url: `/api/employees/undo/${id}`,
     fetchOptions: {
-      method: "POST",
+      method: 'POST',
     },
     onSuccess: () => {
       loadTable()
@@ -41,7 +41,7 @@ export const DeleteTd = (props: DeleteTdProps) => {
           deleted ? undoEmployee() : removeEmployee()
         }}
       >
-        {deleted ? "Undo" : <span>Delete</span>}
+        {deleted ? 'Undo' : <span>Delete</span>}
       </button>
     </td>
   )

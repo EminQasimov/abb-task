@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState } from 'react'
 
-import { confirmDialog } from "primereact/confirmdialog"
-import useFetch from "hooks/use-fetch"
+import { confirmDialog } from 'primereact/confirmdialog'
+import useFetch from 'hooks/use-fetch'
 
-import { StringSchema } from "yup"
-import { noop } from "types"
+import { StringSchema } from 'yup'
+import { noop } from 'types'
 
 export type HookProps = {
   initialValue: string
@@ -17,7 +17,7 @@ export type HookProps = {
 export default function useCellState(props: HookProps) {
   const { initialValue, id, field, schema, loadTable } = props
 
-  const [value, setValue] = useState(() => initialValue ?? "")
+  const [value, setValue] = useState(() => initialValue ?? '')
   const [errors, setErrors] = useState([])
 
   const isValueNotChanged = value === initialValue
@@ -25,7 +25,7 @@ export default function useCellState(props: HookProps) {
   const { refetch: saveValue } = useFetch({
     url: `/api/employees/${id}`,
     fetchOptions: {
-      method: "PATCH",
+      method: 'PATCH',
       body: JSON.stringify({
         [field]: value,
       }),
@@ -64,11 +64,11 @@ export default function useCellState(props: HookProps) {
           saving <strong>{value}</strong> ?
         </div>
       ),
-      header: "Confirmation",
-      icon: "pi pi-info-circle",
-      position: "top",
-      rejectLabel: "No, cancel changes",
-      acceptLabel: "Yes, save my changes",
+      header: 'Confirmation',
+      icon: 'pi pi-info-circle',
+      position: 'top',
+      rejectLabel: 'No, cancel changes',
+      acceptLabel: 'Yes, save my changes',
       reject: () => {
         closeCallback()
         setValue(initialValue)

@@ -1,5 +1,5 @@
-import { NextApiRequest, NextApiResponse } from "next"
-import * as db from "db"
+import { NextApiRequest, NextApiResponse } from 'next'
+import * as db from 'db'
 
 // /api.employees/undo/:id
 export default function employeeHandler(
@@ -10,11 +10,13 @@ export default function employeeHandler(
   const { id } = query
 
   switch (method) {
-    case "POST":
+    case 'POST': {
       const data = db.undoEmployee(id as string)
       res.status(200).json(data)
       break
-    default:
+    }
+    default: {
       res.status(405).end(`Method ${method} Not Allowed`)
+    }
   }
 }

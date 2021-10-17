@@ -1,6 +1,6 @@
-import { employees, initialEmployees, saveDb } from "db"
-import { Employee } from "types"
-import { shallowEqual } from "utils"
+import { employees, initialEmployees, saveDb } from 'db'
+import { Employee } from 'types'
+import { shallowEqual } from 'utils'
 
 export function updateEmployee(employeeId: string, body: Partial<Employee>) {
   const foundIndex = employees.findIndex((item) => item.id === employeeId)

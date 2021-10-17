@@ -1,9 +1,9 @@
-import { BirthDateTd, PhoneTd, SharedTd, DeleteTd } from "./cells"
-import { textSchema, phoneSchema, dateSchema } from "./validations"
+import { BirthDateTd, PhoneTd, SharedTd, DeleteTd } from './cells'
+import { textSchema, phoneSchema, dateSchema } from './validations'
 
-import styles from "../table.module.scss"
+import styles from '../table.module.scss'
 
-import { Employee, noop } from "types"
+import { Employee, noop } from 'types'
 
 type RowProps = {
   employee: Employee
@@ -24,7 +24,7 @@ export const Row = (props: RowProps) => {
   }
 
   return (
-    <tr className={deleted ? styles.deleted : ""}>
+    <tr className={deleted ? styles.deleted : ''}>
       <td>
         <span className={styles.idColCell}>{id}</span>
       </td>

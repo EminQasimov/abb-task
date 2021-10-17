@@ -1,15 +1,16 @@
-export * from "./handlers"
-import fs from "fs"
-import path from "path"
-import data from "./data/data.json"
+export * from './handlers'
+import fs from 'fs'
+import path from 'path'
+import data from './data/data.json'
 
-import { Employee } from "types"
+import { Employee } from 'types'
 
-console.log("Local DB loaded")
+console.log('Local DB loaded')
 
-export let employees: Employee[] = data.employees
-export let initialEmployees: { [key: string]: Employee } = data.initialEmployees
-export let deletedEmployees: Employee[] = data.deletedEmployees
+export const employees: Employee[] = data.employees
+export const initialEmployees: { [key: string]: Employee } =
+  data.initialEmployees
+export const deletedEmployees: Employee[] = data.deletedEmployees
 
 /**
  * @description save memory state into local file system as json.
@@ -22,8 +23,8 @@ export function saveDb() {
     deletedEmployees,
     employees,
   }
-  const url = path.resolve(process.cwd(), "./src/db/data/data.json")
+  const url = path.resolve(process.cwd(), './src/db/data/data.json')
 
   fs.writeFileSync(url, JSON.stringify(storedData, null, 2))
-  console.log("DB saved into " + url)
+  console.log('DB saved into ' + url)
 }

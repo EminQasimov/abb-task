@@ -1,16 +1,16 @@
 // @ts-ignore
-import { default as RCDatePicker } from "rc-calendar/lib/Picker"
-import { useState } from "react"
-import { Moment } from "moment"
-import Calendar from "rc-calendar"
+import { default as RCDatePicker } from 'rc-calendar/lib/Picker'
+import { useState } from 'react'
+import { Moment } from 'moment'
+import Calendar from 'rc-calendar'
 
-import { Input } from "components"
-import { readableDateFormat } from "utils"
+import { Input } from 'components'
+import { readableDateFormat } from 'utils'
 
-import "rc-calendar/assets/index.css"
-import styles from "./date-picker.module.scss"
+import 'rc-calendar/assets/index.css'
+import styles from './date-picker.module.scss'
 
-const multiFormats = ["DD/MM/YYYY", "DD/MM/YY", "DDMMYY", "D/M/YY"]
+const multiFormats = ['DD/MM/YYYY', 'DD/MM/YY', 'DDMMYY', 'D/M/YY']
 
 type DateProps = {
   value: Moment
@@ -55,7 +55,7 @@ export function DatePicker(props: DateProps) {
             autoFocus
             onFocus={() => setOpened(true)}
             className={styles.input}
-            value={(value && value.format(readableDateFormat)) || ""}
+            value={(value && value.format(readableDateFormat)) || ''}
             errors={errors}
           />
         )

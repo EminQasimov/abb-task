@@ -1,5 +1,5 @@
-import { NextApiRequest, NextApiResponse } from "next"
-import * as db from "db"
+import { NextApiRequest, NextApiResponse } from 'next'
+import * as db from 'db'
 
 // /api.employees/:id
 export default function employeeHandler(
@@ -10,15 +10,18 @@ export default function employeeHandler(
   const { id } = query
 
   switch (method) {
-    case "DELETE":
+    case 'DELETE': {
       const deleted = db.deleteEmployee(id as string)
       res.status(200).json(deleted)
       break
-    case "PATCH":
+    }
+    case 'PATCH': {
       const updated = db.updateEmployee(id as string, JSON.parse(body))
       res.status(200).json(updated)
       break
-    default:
+    }
+    default: {
       res.status(405).end(`Method ${method} Not Allowed`)
+    }
   }
 }

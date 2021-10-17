@@ -1,7 +1,7 @@
-import { InlineForm, MaskedInput } from "components"
-import { SharedProps } from "./shared-td"
+import { InlineForm, MaskedInput } from 'components'
+import { SharedProps } from './shared-td'
 
-import useCellState from "./use-cell-state"
+import useCellState from './use-cell-state'
 
 export const PhoneTd = (props: SharedProps) => {
   const { value, setValue, handleSubmit, handleCancel, errors } =

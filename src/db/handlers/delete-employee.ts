@@ -1,4 +1,4 @@
-import { deletedEmployees, employees, saveDb } from "db"
+import { deletedEmployees, employees, saveDb } from 'db'
 
 export function deleteEmployee(employeeId: string) {
   // check if employee exists

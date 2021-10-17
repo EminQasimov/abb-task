@@ -1,12 +1,12 @@
-import { DefaultSeo } from "next-seo"
-import { AppProps } from "next/app"
-import Head from "next/head"
+import { DefaultSeo } from 'next-seo'
+import { AppProps } from 'next/app'
+import Head from 'next/head'
 
-import defaultSEOConfig from "../../next-seo.config"
-import { Layout } from "components"
+import defaultSEOConfig from '../../next-seo.config'
+import { Layout } from 'components'
 
-import "@fontsource/lexend/latin.css"
-import "styles/globals.css"
+import '@fontsource/lexend/latin.css'
+import 'styles/globals.css'
 
 const CustomApp = ({ Component, pageProps }: AppProps) => {
   return (

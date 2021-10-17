@@ -1,12 +1,12 @@
-import { InlineForm, DatePicker } from "components"
-import { readableDateFormat } from "utils"
-import moment from "moment"
-import { DateIcon } from "assets/icons"
-import useCellState from "./use-cell-state"
+import { InlineForm, DatePicker } from 'components'
+import { readableDateFormat } from 'utils'
+import moment from 'moment'
+import { DateIcon } from 'assets/icons'
+import useCellState from './use-cell-state'
 
-import { SharedProps } from "."
+import { SharedProps } from '.'
 
-import styles from "../../table.module.scss"
+import styles from '../../table.module.scss'
 
 export const BirthDateTd = (props: SharedProps) => {
   const { initialValue } = props
@@ -28,7 +28,7 @@ export const BirthDateTd = (props: SharedProps) => {
         renderEditMode={() => (
           <DatePicker
             value={moment(value)}
-            onChange={(value) => setValue(value ? value.format() : "")}
+            onChange={(value) => setValue(value ? value.format() : '')}
             errors={errors}
           />
         )}

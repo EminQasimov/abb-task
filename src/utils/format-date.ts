@@ -1,6 +1,6 @@
-import moment from "moment"
+import moment from 'moment'
 
-export const readableDateFormat = "MMM D, YYYY"
+export const readableDateFormat = 'MMM D, YYYY'
 
 export function formatDate(date: string) {
   let readableDate = date
@@ -8,7 +8,7 @@ export function formatDate(date: string) {
   try {
     readableDate = moment(date).format(readableDateFormat)
   } catch (error) {
-    console.log("wrong date format")
+    console.log('wrong date format')
   }
 
   return readableDate

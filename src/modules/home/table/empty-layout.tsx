@@ -1,4 +1,5 @@
-import styles from "./table.module.scss"
+/* eslint-disable @next/next/no-img-element */
+import styles from './table.module.scss'
 
 export const EmptyLayout = ({
   children,

@@ -8,5 +8,5 @@ export function changeUrlParamsSilently(key: string, value: string) {
     url.searchParams.delete(key)
   }
 
-  window.history.pushState({}, "", url.toString())
+  window.history.pushState({}, '', url.toString())
 }

@@ -1,9 +1,9 @@
-import { useState, ReactChild } from "react"
-import { CancelIcon, CheckIcon, EditIcon } from "assets/icons"
+import { useState, ReactChild } from 'react'
+import { CancelIcon, CheckIcon, EditIcon } from 'assets/icons'
 
-import styles from "./inline-form.module.scss"
-import useClickOutside from "hooks/use-click-outside"
-import { noop } from "types"
+import styles from './inline-form.module.scss'
+import useClickOutside from 'hooks/use-click-outside'
+import { noop } from 'types'
 
 type InlineFormProps = {
   viewMode: ReactChild

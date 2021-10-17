@@ -1,4 +1,4 @@
-import { deletedEmployees, employees, initialEmployees, saveDb } from "db"
+import { deletedEmployees, employees, initialEmployees, saveDb } from 'db'
 
 export function resetEmployees() {
   //  recover deleted employees
