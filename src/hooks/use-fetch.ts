@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import { useCallback, useEffect, useState } from 'react'
 
 type HookProps = {
@@ -75,14 +76,15 @@ export default function useFetch(props: HookProps) {
         onDone?.()
       }
     },
-    [url, fetchOptions, onSuccess]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [url, fetchOptions]
   )
 
   useEffect(() => {
     if (!queryEnabled) return
 
     refetch()
-  }, [url, queryEnabled, refetch])
+  }, [queryEnabled, refetch])
 
   return {
     isLoading,
