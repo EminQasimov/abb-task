@@ -1,5 +1,14 @@
 {
-  "initialEmployees": {},
+  "initialEmployees": {
+    "HwFVZsGPfc": {
+      "id": "HwFVZsGPfc",
+      "name": "Amidsdfsdf",
+      "surname": "Ələkbərov",
+      "birthDate": "2021-09-02T05:09:13.164Z",
+      "position": "Frontend",
+      "phone": "(977)014-26-55"
+    }
+  },
   "deletedEmployees": [],
   "employees": [
     {
@@ -148,7 +157,7 @@
     },
     {
       "id": "HwFVZsGPfc",
-      "name": "Amidsdfsdf",
+      "name": "Amid",
       "surname": "Ələkbərov",
       "birthDate": "2021-09-02T05:09:13.164Z",
       "position": "Frontend",

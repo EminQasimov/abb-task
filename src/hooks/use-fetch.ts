@@ -51,7 +51,6 @@ export default function useFetch(props: HookProps) {
     async (onDone?: () => void) => {
       update({
         isLoading: true,
-        data: [],
       })
 
       try {

@@ -1,6 +1,6 @@
 import { CancelIcon, SearchIcon } from 'assets/icons'
 import { Input } from 'components'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import styles from './header.module.scss'
 
@@ -12,6 +12,10 @@ interface SearchProps {
 export default function Search(props: SearchProps) {
   const { onSearch, initialValue } = props
   const [value, setValue] = useState(() => initialValue)
+
+  useEffect(() => {
+    setValue(initialValue)
+  }, [initialValue])
 
   return (
     <form

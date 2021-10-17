@@ -1,4 +1,4 @@
-# ABB challenge task - [DEMO](https://abb-task.herokuapp.com/)
+# ABB challenge task - [ONLINE DEMO](https://abb-task.herokuapp.com/)
 
 ![logo](./public/abb-logo.png)
 
@@ -11,7 +11,7 @@ This is a `Next.js` project bootstrapped with `create-next-app` and `TypeScript`
 
 App state is saved in server local file system. For near real case simulation purpose I had used next.js /api route concept. not in browser memory or localstorage.
 
-**During testing, please use production build version. DEV server is not consistent for testing**
+**During testing, please use production build version. DEV server is not consistent for testing**. or use online deployed version [ONLINE DEMO](https://abb-task.herokuapp.com/)
 
 ### To start server:
 
